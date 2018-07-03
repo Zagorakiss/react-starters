@@ -1,0 +1,13 @@
+.DS_Store
+.awcache
+.git
+.gitconfig
+.idea
+*.suo
+*.user
+*.sln.docstates
+*.log
+build
+media
+node_modules
+package-lock.json
