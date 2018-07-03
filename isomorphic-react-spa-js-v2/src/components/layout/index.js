@@ -9,6 +9,10 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
+// const commonRoutes = []
+// const protectedRoutes = []
+// const guestRoutes = []
+
 class Layout extends React.PureComponent {
 
     componentWillMount() {
@@ -17,10 +21,29 @@ class Layout extends React.PureComponent {
 
     render() {
         const {route} = this.props;
+        const isAuth = true;
+        const filteredRoutes = route.routes.filter( (item) => {
+            if (item.type === 'common' ) {
+                return true;
+            }
+            if (item.type === 'guest' && !isAuth) {
+                return true
+            }
+            if (item.type === 'protected' && isAuth) {
+                if (!item.subType) {
+                  return true
+              } else if (item.subType === 'premium') {
+                  return true
+              }
+            }
+        } );
         return (
             <div id="layout">
                 <div id="routes">
-                    {renderRoutes(route && route.routes)}
+                    {/* {renderRoutes(route && route.routes)} */}
+                    {renderRoutes(filteredRoutes)}
+                    {/* {commonRoutes}
+                    {isAuth ? protectedRoutes : guestRoutes} */}
                 </div>
             </div>
         );

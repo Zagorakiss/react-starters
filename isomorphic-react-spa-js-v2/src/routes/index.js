@@ -1,5 +1,6 @@
 import Layout from 'components/layout';
 import Home from './home';
+import Profile from './profile';
 
 const routeConfig = [
     {
@@ -8,7 +9,19 @@ const routeConfig = [
             {
                 component: Home,
                 path: '/',
-                exact: true
+                exact: true,
+                type: 'common'
+            },
+            {
+                component: Profile,
+                path: '/profile',
+                exact: true,
+                type: 'protected'
+            },
+            {
+                component: Home,
+                path: '*',
+                type: 'common'
             }
         ]
     }
