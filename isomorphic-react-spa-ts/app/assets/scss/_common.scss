@@ -1,0 +1,25 @@
+* {
+	box-sizing: border-box;
+	// text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+}
+
+*:focus {
+	outline: none;
+}
+
+html {
+	font-size: 62.5%;
+	min-height: 100vh;
+}
+
+body {
+	font-family: 'Helvetica', system-ui;
+	font-size: 1.6rem;
+	overflow-y: scroll;
+	// background: darkcyan;
+}
+
+#app, #layout, #routes {
+	min-height: 100vh;
+	height: auto;
+}

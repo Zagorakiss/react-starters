@@ -1,0 +1,33 @@
+{
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"*": [
+				"app/*"
+			]
+		},
+		"outDir": "build",
+		"module": "commonjs",
+		"lib": [
+			"es2015",
+			"dom"
+		],
+		"target": "es5",
+		"sourceMap": true,
+		"inlineSourceMap": false,
+		"inlineSources": false,
+		"experimentalDecorators": true,
+		"noUnusedParameters": false,
+		"noUnusedLocals": false,
+		"jsx": "react",
+		"moduleResolution": "node"
+	},
+	"exclude": [
+		"node_modules",
+		"build"
+	],
+	"awesomeTypescriptLoaderOptions": {
+		"useCache": true,
+		"useBabel": true
+	}
+}
