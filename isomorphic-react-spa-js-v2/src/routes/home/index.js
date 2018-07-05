@@ -1,29 +1,19 @@
 import * as React from 'react';
-import {connect} from 'react-redux';
-import {increment} from 'actions';
+// import {connect} from 'react-redux';
 
 class Home extends React.PureComponent {
 
     constructor(props) {
         super(props)
         this.state = {
-            foo: 0
+            // foo: 0
         }
-    }
-
-    componentDidMount() {
-        this.props.increment(1);
-        setTimeout(() => {
-            this.setState({
-                foo: 1
-            });
-        }, 300);
     }
 
     render() {
         return (
             <div>
-                Hom
+                Home
                 <a href="#">Click</a>
             </div>
         );
@@ -31,8 +21,4 @@ class Home extends React.PureComponent {
 
 }
 
-export default connect(null, (dispatch) => {
-    return {
-        increment: (count) => increment(dispatch, count)
-    };
-})(Home);
+export default Home;

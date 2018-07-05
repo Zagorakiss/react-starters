@@ -14,7 +14,7 @@ import createStore from 'config/store';
 import createMemoryHistory from 'history/createMemoryHistory';
 import serialize from 'serialize-javascript';
 import {server} from 'constants/server';
-import {setServerSide} from 'actions';
+import {setServerSide} from '../../redux/actions/env';
 
 function resolve(manifest, files) {
     return files.map((src) => {

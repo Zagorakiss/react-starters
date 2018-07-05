@@ -7,7 +7,7 @@ import {AppContainer} from 'react-hot-loader';
 import routesConfig from 'routes';
 import createHistory from 'history/createBrowserHistory';
 import configureStore from 'config/store';
-import {setServerSide} from 'actions';
+import {setServerSide} from '../../redux/actions/env';
 
 const history = createHistory();
 const store = configureStore(history, window.__REDUX_STATE__);
@@ -30,7 +30,7 @@ setServerSide(store.dispatch, false);
 
 if (module.hot) {
     module.hot.accept('../../routes', () => {
-        const app = require('../../routes').default;
+        const app = require('../../routes');
         render(app);
     });
 }

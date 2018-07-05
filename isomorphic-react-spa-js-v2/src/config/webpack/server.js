@@ -31,7 +31,10 @@ const config = {
         }
     },
 
-    entry: './src/config/server/index.js',
+    entry: [
+        'babel-polyfill',
+        './src/config/server/index.js'
+    ],
 
     output: {
         path: path.resolve('./build/public'),

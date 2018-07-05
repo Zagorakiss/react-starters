@@ -27,6 +27,7 @@ let config = {
 
     entry: {
         app: [
+            'babel-polyfill',
             'react',
             'react-dom',
             'react-helmet',

@@ -1,10 +1,10 @@
 import {combineReducers} from 'redux';
 import {routerReducer} from 'react-router-redux';
-import counter from 'reducers/counter';
-import env from 'reducers/env';
+import {env} from '../../redux/reducers/env';
+import {session} from '../../redux/reducers/session'
 
 export default combineReducers({
     routing: routerReducer,
-    counter,
-    env
+    env,
+    session
 });
