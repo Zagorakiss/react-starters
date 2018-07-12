@@ -1,0 +1,54 @@
+{
+  "landing": {
+    "top": {
+      "heading": "Meet the cryptocurrency"
+    },
+    "features": {
+      "heading": "Do you want to know what cryptocurrencies are and how to handle them?",
+      "text": "BC.Wallet is a perfect choice whether you are an experienced or a first time crypto user. Here is why:",
+      "items": {
+        "test": {
+          "heading": "We give test currency",
+          "text": "Try all wallet functions without losing any money!"
+        },
+        "learn": {
+          "heading": "Comprehensible training course",
+          "text": "Step-by-step instructions explains you how to receive and send cryptocurrencies with our service."
+        },
+        "usefull": {
+          "heading": "Main functions for currency managing",
+          "text": "All you need in one place. It's handy!"
+        },
+        "support": {
+          "heading": "24/7 customer support, clear instructions",
+          "text": "Our telegram bot and technical support service are always ready to answer your questions."
+        }
+      }
+    },
+    "bullets": {
+      "heading": "BC.Wallet advantages",
+      "text": "Our wallet has all main functions for easy and simple start in cryptocurrencies. In our wallet you will find:",
+      "items": {
+        "free": "Free receipt",
+        "easy": "Easy transfer"
+      }
+    },
+    "currencies": {
+      "heading": "Wide list of available currencies",
+      "text": "Available currencies list is constantly updated. If you want to see any currency in our wallet, please, let us know and we will respect your wishes."
+    },
+    "updates": {
+      "heading": "Our service is still new, but we want to make it as easy as it can be",
+      "text": "Help us in implementing our ambitious project! Receive training, write us about your experience with our service and the first 300 users will receive bitcoins for their reviews. Find the offer details in your wallet.",
+      "secondHeading": "Ready to start?",
+      "button": "Create a wallet"
+    },
+    "action": {
+      "text": "Want to try later? Leave your e-mail and we will send you updates on BC Wallet.",
+      "emailPlaceholder": "E-mail",
+      "button": "Tell about updates!",
+      "success": "Success! We will send you most importantt news and updates!.",
+      "fail": "Error occured :(. Try again!"
+    }
+  }
+}

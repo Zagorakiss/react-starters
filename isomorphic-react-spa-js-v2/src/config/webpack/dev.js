@@ -86,6 +86,10 @@ const config = {
             {
                 test: /\.(jpe?g|png|gif)$/i,
                 loader: 'url-loader?limit=1000&name=images/[name].[hash].[ext]'
+            },
+            {
+                test: /locales/,
+                use: ['@alienfast/i18next-loader']
             }
         ]
     },

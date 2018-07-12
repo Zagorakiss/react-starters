@@ -1,0 +1,52 @@
+{
+	"learn":{
+	  "welcome": {
+			"heading":"Hello!",
+			"p1":"Welcome to the BC Wallet!",
+			"p2":"Get training and start using your wallet in 5 minutes.",
+			"p3":"We created a Test Net Bitcoin wallet for you so that you can make a trial receipt of funds and their transfer. The currency in this wallet is test, but all records in the blockchain are absolutely real.",
+			"p4":"Share your impressions after the training!",
+			"footer":" BCwallet.io command",
+			"button":"To start"
+	  },
+	  "step0":"Let's start with the security settings. Go to the 'Profile.",
+	  "step1":"To ensure that cybercriminals do not steal your money, even having the access to your mail, connect two-factor authentication using Telegram or Google Authentificator. A couple of clicks - and your wallet is safe.",
+	  "step2":"At each transaction, the system will ask you for a password. The payment password is the same as the password when you register.",
+	  "step3":"You can change it here.",
+	  "step4":"Here you see the history of the entries in the wallet",
+	  "step5":"Let's start reviewing the functionality of your wallet. Open «Balance»",
+	  "step6":"Click «+» to add a wallet .Choose the Test Net Bitcoin wallet. In the future, you can add wallets with the currency you need.",
+	  "step7":"It is the test wallet. A wallet is a unique number assigned to you in the blockchain system. Look at the submenu in the upper right corner - here you can make quick transactions with the wallet.",
+	  "step8":"The total balance of all the wallets is displayed in the specified currency.",
+	  "step9":"To receive a transfer, create a request for funds.",
+	  "step10":"Select the wallet on which you want to receive money. To get test bitcoins, select the TestNet Bitcoin wallet.",
+	  "step11":"Enter the amount ",
+	  "step12":"If it necessary, write a comment ",
+	  "step13":"Create a request ",
+	  "step14":"Send a link or a QR code to the sender so that he can transfer money directly to your wallet.",
+	  "step15":"Now send a link to the BCWallet chat-bot, who will make the first transfer within 15-20 minutes.",
+	  "step16":"Close the request and continue our training.",
+	  "step17":"Here is the history of all your transactions.",
+	  "step18":"In order for the transaction to take place, you need to wait for two confirmations in the blockchain network. The transaction status will change when the funds are credited to the account.",
+	  "step19":"This is a unique number, and you can get the information about the transaction in the blockchain system from it.",
+	  "step20":"Let's move on to setting up your account.",
+	  "step21":"Here you can record the wallet addresses of other users. When you create a transfer, you only need to select the address from the list.",
+	  "step22":"Enable notifications not to miss the transfer of funds or the completion of the transfer. You will receive a notice of receipt of funds from BCWallet bot on Telegram or on the mail.",
+	  "step23":"Making transfers is easy! Let's send the currency to the BCWallet team right now.",
+	  "step24":"Specify the address of the recipient. Open the address book and select the address of the BCWallet command.",
+	  "step25":"Choose the Test Net Bitcoin wallet.",
+	  "step26":"Specify the amount of remuneration to the miners - the higher the remuneration, the faster the transfer will be made.",
+	  "step27":"Enter the transfer amount.",
+	  "step28":"If it is necessary, write a comment ",
+	  "step29":"Enter your payment password that you used when registering. And carry out the operation.",
+	  "finish": {
+			"heading1": "Congratulations!",
+			"heading2": "You have successfully completed the training!",
+			"p1": "Answer few questions by the link below!",
+			"p2": "It will take no more than 5 minutes!",
+			"linkText": "Link",
+      		"linkUrl": "https://goo.gl/forms/3KqWkVc2KIX6pPjC2",
+			"button": "Continue"
+	  }
+	}
+}

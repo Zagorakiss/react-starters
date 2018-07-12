@@ -1,0 +1,18 @@
+{
+  "transactionHistory": {
+    "heading": "Transactions history",
+    "loadMore": "Load more",
+    "historyItems": {
+      "headers": {
+        "status": "Status",
+        "date": "Date",
+        "type": "Operation type",
+        "currency": "Currency"
+      },
+      "types": {
+        "input": "Input",
+        "output": "Output"
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "nav": {
+    "balance": "Balance",
+    "history": "History",
+    "send": "Send",
+    "exchange": "Exchange",
+    "request": "Request",
+    "settings": "Settings",
+    "login": "Login",
+    "signup": "Signup",
+    "profile": "Profile",
+    "exit": "Exit"
+  }
+}

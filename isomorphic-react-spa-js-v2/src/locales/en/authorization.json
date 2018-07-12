@@ -1,0 +1,65 @@
+{
+  "authorization": {
+    "registration": {
+      "heading": "Sign up",
+      "loginText": "Have an account?",
+      "loginButton": "Login",
+      "form": {
+        "dontMatch": "Passwords don't match",
+        "email": "We will send email to this address for confirmation",
+        "password": "Password should be not less then 10 symbols and include letters and digits",
+        "policy": "privacy policy",
+        "and": " and ",
+        "agreement": "user agreement",
+        "policyAccept": "I accept conditions and agree with ",
+        "openAccount": "Create wallet fo free",
+        "passwordLabelFirst": "Password",
+        "passwordLabelSecond": "Repeat password",
+        "capchaValidation": "reCaptcha field is required",
+        "licenseValidation": "Agree to privicy policy to continue" 
+      },
+      "confirm": {
+        "didWrong": "Did you entered wrong address?",
+        "change": "Change",
+        "send": "Save and send",
+        "emailSent": "Wallet almost ready. To complete registration follow thi link we sent to your email address:",
+        "mailChangedMessage": "New email saved"
+      }
+    },
+    "login": {
+      "heading": "Log in",
+      "recovery": "Recover password",
+      "login": "Log in",
+      "passwordLabel": "Password",
+      "unknownError": "Unknown error occurred"
+    },
+    "emailConfirmed": {
+      "heading": "Your email confirmed",
+      "text": "Log in to start using your wallet!",
+      "button": "Log in"
+    },
+    "emailSent": {
+      "heading": "Check your mail",
+      "text": "Did't get the letter? Maybe it gone in «Spam» folder. If it is not there you can",
+      "button": "send letter again.",
+      "emailRepeated": "Letter was sent again",
+      "emailRepeatedError": "Letter already was sent again"
+    },
+    "newPassword": {
+      "resetText": "Password has been reset.Enter new to log in.",
+      "changedText": "Password successfully changed",
+      "heading": "Log in",
+      "dontMatch": "Passwords do not match",
+      "login": "Log in",
+      "firstInputLabel": "New password",
+      "secondInputLabel": "Repeat password",
+      "submit": "Save"
+    },
+    "recovery": {
+      "emailSent": "We sent instroction of reseting password to address:",
+      "heading": "Password recovery",
+      "text": "Enter email address you signed up with.",
+      "submit": "Recover password"
+    }
+  }
+}

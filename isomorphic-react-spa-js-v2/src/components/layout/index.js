@@ -45,7 +45,10 @@ class Layout extends React.PureComponent {
 
     componentWillMount() {
         this.props.setDeviceDetails();
-        const token = JSON.parse(localStorage.getItem('token'))
+    }
+
+    componentDidMount() {
+        const token = JSON.parse(localStorage.getItem('token'));
         if (token) {
             this.props.login({ refresh_token: token.refresh_token })
                 .then(() => console.log('login after refresh'))
@@ -90,6 +93,7 @@ class Layout extends React.PureComponent {
               }
             }
         } );
+        console.warn(filteredRoutes);
         return (
             <div id="layout">
                 <div id="routes">

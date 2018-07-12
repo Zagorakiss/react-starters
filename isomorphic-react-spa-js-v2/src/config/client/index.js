@@ -8,6 +8,8 @@ import routesConfig from 'routes';
 import createHistory from 'history/createBrowserHistory';
 import configureStore from 'config/store';
 import {setServerSide} from '../../redux/actions/env';
+import {I18nextProvider} from 'react-i18next';
+import i18n from '../i18n';
 
 const history = createHistory();
 const store = configureStore(history, window.__REDUX_STATE__);
@@ -17,7 +19,9 @@ const render = (routes) => {
         <AppContainer>
             <Provider store={store}>
                 <ConnectedRouter history={history}>
-                    {renderRoutes(routes)}
+                    <I18nextProvider i18n={i18n}>
+                        {renderRoutes(routes)}
+                    </I18nextProvider>
                 </ConnectedRouter>
             </Provider>
         </AppContainer>,

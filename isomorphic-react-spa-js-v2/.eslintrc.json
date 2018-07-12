@@ -41,7 +41,7 @@
         ],
         "callback-return": "error",
         "camelcase": "error",
-        "capitalized-comments": "error",
+        "capitalized-comments": "off",
         "class-methods-use-this": "off",
         "comma-dangle": "off",
         "comma-spacing": [
@@ -132,7 +132,7 @@
         "max-params": "error",
         "max-statements": "off",
         "max-statements-per-line": "error",
-        "multiline-comment-style": "error",
+        "multiline-comment-style": "off",
         "multiline-ternary": "error",
         "new-cap": "error",
         "new-parens": "error",

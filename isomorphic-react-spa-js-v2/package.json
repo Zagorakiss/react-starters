@@ -52,6 +52,7 @@
     "webpack-node-externals": "1.6.0"
   },
   "dependencies": {
+    "@alienfast/i18next-loader": "^1.0.14",
     "body-parser": "1.18.2",
     "bootstrap-sass": "3.3.7",
     "busboy": "0.2.14",
@@ -62,6 +63,10 @@
     "express": "4.16.2",
     "fetch-jsonp": "1.1.3",
     "history": "4.7.2",
+    "i18next": "^10.5.0",
+    "i18next-browser-languagedetector": "^2.1.0",
+    "i18next-fetch-backend": "^0.1.0",
+    "i18next-loader": "0.0.6",
     "isomorphic-fetch": "2.2.1",
     "lodash": "4.17.4",
     "moment": "^2.19.1",

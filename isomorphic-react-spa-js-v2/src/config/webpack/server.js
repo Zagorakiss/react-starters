@@ -55,6 +55,10 @@ const config = {
                 use: {
                     loader: 'babel-loader'
                 }
+            },
+            {
+                test: /locales/,
+                use: ['@alienfast/i18next-loader']
             }
         ]
     },

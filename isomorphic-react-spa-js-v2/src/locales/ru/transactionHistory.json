@@ -1,0 +1,18 @@
+{
+  "transactionHistory": {
+    "heading": "История транзакций",
+    "loadMore": "Загрузить еще",
+    "historyItems": {
+      "headers": {
+        "status": "Статус",
+        "date": "Дата",
+        "type": "Характер операции",
+        "currency": "Валюта"
+      },
+      "types": {
+        "input": "Поступление",
+        "output": "Отправление"
+      }
+    }
+  }
+}

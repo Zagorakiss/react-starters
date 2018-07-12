@@ -1,11 +1,11 @@
 import {connect} from 'react-redux';
-import {Login} from '../../../components/Authorization/Login';
+import Login from '../../../components/Authorization/Login';
 import {login, loginWithTfa} from '../../../redux/actions/session';
 // import {openPopup} from '../../../redux/actions/popup';
 // import {openError} from '../../../redux/actions/systemMessages';
 
 const mapStateToProps = state => {
-  const {isAuth, email, tfaNeeded, tfaType, token, isFetching} = state.session
+  const {isAuth, email, tfaNeeded, tfaType, token, isFetching} = state.session;
   return {
     isAuth,
     email,

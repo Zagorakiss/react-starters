@@ -1,7 +1,7 @@
 import Layout from 'components/layout';
 import Home from './home';
 import Profile from './profile';
-import LoginContainer from '../containers/Authorization/LoginContainer';
+import {LoginContainer} from '../containers/Authorization/LoginContainer';
 
 const routeConfig = [
     {
@@ -20,15 +20,15 @@ const routeConfig = [
                 type: 'protected'
             },
             {
-                component: Home,
-                path: '*',
-                type: 'common'
-            },
-            {
                 component: LoginContainer,
                 path: '/login',
                 exaxt: true,
                 type: 'guest'
+            },
+            {
+                component: Home,
+                path: '*',
+                type: 'common'
             }
         ]
     }

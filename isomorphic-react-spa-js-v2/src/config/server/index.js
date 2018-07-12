@@ -15,6 +15,8 @@ import createMemoryHistory from 'history/createMemoryHistory';
 import serialize from 'serialize-javascript';
 import {server} from 'constants/server';
 import {setServerSide} from '../../redux/actions/env';
+import {I18nextProvider} from 'react-i18next';
+import i18n from '../i18n';
 
 function resolve(manifest, files) {
     return files.map((src) => {
@@ -98,7 +100,9 @@ app.get('*', (req, res) => {
         const reactAppElement = renderToString((
             <Provider store={store}>
                 <StaticRouter location={req.path} context={context}>
-                    {renderRoutes(routeConfig)}
+                    <I18nextProvider i18n={i18n}>
+                        {renderRoutes(routeConfig)}
+                    </I18nextProvider>
                 </StaticRouter>
             </Provider>
         ));

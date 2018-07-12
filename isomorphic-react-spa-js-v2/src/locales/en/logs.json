@@ -1,0 +1,11 @@
+{
+  "logs": {
+    "heading": "Logs",
+    "loadMore": "Load more",
+    "logsItems": {
+      "datetime": "Date and time",
+      "ip": "IP",
+      "browser": "Browser"
+    }
+  }
+}
