@@ -1,7 +1,9 @@
 import * as React from 'react';
 // import {connect} from 'react-redux';
+import {FilterContainer} from '../../containers/Home/FilterContainer';
+import {MapOfProjectsContainer} from '../../containers/Home/MapOfProjectsContainer';
 
-class Home extends React.PureComponent {
+class HomeRoute extends React.PureComponent {
 
     constructor(props) {
         super(props)
@@ -10,15 +12,19 @@ class Home extends React.PureComponent {
         }
     }
 
+    // static fetchData(dispatch) {
+    //     return getProjects(dispatch);
+    // }
+
     render() {
         return (
             <div>
-                Home
-                <a href="#">Click</a>
+                <FilterContainer />
+                <MapOfProjectsContainer />
             </div>
         );
     }
 
 }
 
-export default Home;
+export default HomeRoute;

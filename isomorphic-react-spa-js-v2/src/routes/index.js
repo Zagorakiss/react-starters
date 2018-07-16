@@ -1,32 +1,32 @@
 import Layout from 'components/layout';
-import Home from './home';
-import Profile from './profile';
-import {LoginContainer} from '../containers/Authorization/LoginContainer';
+import HomeRoute from './home';
+import ProfileRoute from './profile';
+import LoginRoute from './login';
 
 const routeConfig = [
     {
         component: Layout,
         routes: [
             {
-                component: Home,
+                component: HomeRoute,
                 path: '/',
                 exact: true,
                 type: 'common'
             },
             {
-                component: Profile,
+                component: ProfileRoute,
                 path: '/profile',
                 exact: true,
                 type: 'protected'
             },
             {
-                component: LoginContainer,
+                component: LoginRoute,
                 path: '/login',
                 exaxt: true,
                 type: 'guest'
             },
             {
-                component: Home,
+                component: HomeRoute,
                 path: '*',
                 type: 'common'
             }

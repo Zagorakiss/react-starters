@@ -1,6 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 // import { Template } from '../Templates';
 // import { CustomLink } from '../../CustomLink';
 // import { LoginForm } from './LoginForm';
@@ -34,7 +34,7 @@ class Login extends React.PureComponent {
   // }
 
   render () {
-    const { t, login, email, isFetching } = this.props;
+    const {t, login, email, isFetching} = this.props;
     return (
       // <Template
       //   heading={t('login.heading')}
@@ -61,7 +61,7 @@ class Login extends React.PureComponent {
         <button
           onClick={() => i18n.changeLanguage('en')}
         >
-          Сменить язык на английсикй
+          Сменить язык на английский
         </button>
       </div>
     )

@@ -1,8 +1,8 @@
 import * as React from 'react';
 // import {connect} from 'react-redux';
-import {ProfileContainer} from '../../containers/ProfileContainer';
+import {LoginContainer} from '../../containers/Authorization/LoginContainer';
 
-class ProfileRoute extends React.PureComponent {
+class LoginRoute extends React.PureComponent {
 
     constructor(props) {
         super(props)
@@ -13,10 +13,10 @@ class ProfileRoute extends React.PureComponent {
 
     render() {
         return (
-            <ProfileContainer />
+            <LoginContainer />
         );
     }
 
 }
 
-export default ProfileRoute;
+export default LoginRoute;

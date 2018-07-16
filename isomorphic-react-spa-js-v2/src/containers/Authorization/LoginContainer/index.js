@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import Login from '../../../components/Authorization/Login';
+import {Login} from 'components';
 import {login, loginWithTfa} from '../../../redux/actions/session';
 // import {openPopup} from '../../../redux/actions/popup';
 // import {openError} from '../../../redux/actions/systemMessages';
