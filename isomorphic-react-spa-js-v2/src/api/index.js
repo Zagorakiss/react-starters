@@ -1,5 +1,11 @@
-import { store } from '../config/store';
-import { login, logout, resetExpTime } from '../redux/actions/session';
+// import store from '../config/store';
+// import createHistory from 'history/createBrowserHistory';
+import configureStore from 'config/store';
+// import {store} from '../config/client';
+import {login, logout, resetExpTime} from '../redux/actions/session';
+
+// const history = createHistory();
+const store = configureStore();
 
 const API = `https://api.bcwallet.info/v1`;
 
@@ -46,6 +52,7 @@ const loginWithToken = () => {
 }
 
 const checkTokenExpiration = async () => {
+  console.dir(store.getState());
   const { expirationTime, isAuth } = store.getState().session
   if (isAuth && expirationTime > 0) {
     const delta = expirationTime - Date.now()

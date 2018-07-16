@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import {translate} from 'react-i18next';
 import i18n from '../../../config/i18n';
 
+// @translate('authorization');
+
 class MapOfProjects extends React.PureComponent {
 
     constructor(props) {
@@ -13,9 +15,23 @@ class MapOfProjects extends React.PureComponent {
     }
 
     render () {
-        // const {t, login, email, isFetching} = this.props;
+        const {t, isAuth, isFetching} = this.props;
         return (
-            <h1>MapOfProjects Component</h1>
+            <div>
+                <h1>MapOfProjects Component</h1>
+                <h2>{`isAuth: ${isAuth}`}</h2>
+                {t('login.heading')}
+                <button
+                    onClick={() => i18n.changeLanguage('ru')}
+                >
+                    Сменить язык на русский
+                </button>
+                <button
+                    onClick={() => i18n.changeLanguage('en')}
+                >
+                    Сменить язык на английский
+                </button>
+            </div>
         )
     }
 }

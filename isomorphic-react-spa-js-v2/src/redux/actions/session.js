@@ -150,6 +150,7 @@ export const login = (userData) => {
         }
       })
       .catch(error => {
+        console.warn(error);
         dispatch(loginFailed(error.text))
         return Promise.reject(error)
       })
