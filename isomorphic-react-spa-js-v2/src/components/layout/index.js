@@ -50,7 +50,7 @@ class Layout extends React.PureComponent {
     componentDidMount() {
         const token = JSON.parse(localStorage.getItem('token'));
         if (token) {
-            this.props.login({ refresh_token: token.refresh_token })
+            this.props.login({refresh_token: token.refresh_token})
                 .then(() => console.log('login after refresh'))
                 .catch(error => {
                     if (error.text) {
@@ -75,11 +75,10 @@ class Layout extends React.PureComponent {
     // }
 
     render() {
-        const {route} = this.props;
-        const {isAuth} = this.props;
+        const {route, isAuth} = this.props;
         // const isAuth = _.get(this.props, `isAuth`);
         const filteredRoutes = route.routes.filter( (item) => {
-            if (item.type === 'common' ) {
+            if (item.type === 'common') {
                 return true;
             }
             if (item.type === 'guest' && !isAuth) {

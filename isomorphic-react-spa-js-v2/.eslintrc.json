@@ -45,7 +45,7 @@
             "1tbs"
         ],
         "callback-return": "error",
-        "camelcase": "error",
+        "camelcase": "off",
         "capitalized-comments": "off",
         "class-methods-use-this": "off",
         "comma-dangle": "off",
@@ -168,7 +168,7 @@
         "no-implicit-coercion": "error",
         "no-implicit-globals": "error",
         "no-implied-eval": "error",
-        "no-inline-comments": "error",
+        "no-inline-comments": "off",
         "no-invalid-this": "off",
         "no-iterator": "error",
         "no-label-var": "error",
@@ -281,10 +281,7 @@
         "sort-vars": "error",
         "space-before-blocks": "error",
         "space-before-function-paren": "off",
-        "space-in-parens": [
-            "error",
-            "never"
-        ],
+        "space-in-parens": "off",
         "space-infix-ops": "off",
         "space-unary-ops": "error",
         "spaced-comment": "error",

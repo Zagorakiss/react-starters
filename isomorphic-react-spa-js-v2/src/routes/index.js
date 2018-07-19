@@ -2,6 +2,7 @@ import Layout from 'components/layout';
 import HomeRoute from './home';
 import ProfileRoute from './profile';
 import LoginRoute from './login';
+import Page404 from './404';
 
 const routeConfig = [
     {
@@ -26,7 +27,7 @@ const routeConfig = [
                 type: 'guest'
             },
             {
-                component: HomeRoute,
+                component: Page404,
                 path: '*',
                 type: 'common'
             }

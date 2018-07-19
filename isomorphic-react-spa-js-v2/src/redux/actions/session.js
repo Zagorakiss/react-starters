@@ -138,7 +138,12 @@ export const login = (userData) => {
             access_token: response.access_token,
             refresh_token: response.refresh_token
           }
-          localStorage.setItem('token', JSON.stringify(token))
+          localStorage.setItem('token', JSON.stringify(token));
+          const session = {
+            isAuth: true,
+            expirationTime: Date.now() + (response.expires_in * 100)
+          }
+          localStorage.setItem('session', JSON.stringify(session));
           if (response.active) {
             return dispatch(loginSuccess(token, response.expires_in))
           } else {
@@ -270,7 +275,8 @@ export const logout = () => {
   return dispatch => {
     return api.delete('/user/logout', '')
       .then(() => {
-        localStorage.removeItem('token')
+        localStorage.removeItem('token');
+        localStorage.removeItem('session');
         dispatch(logoutSuccess())
         return Promise.resolve()
       })
