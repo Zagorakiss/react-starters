@@ -197,9 +197,9 @@ Login.propTypes = {
 	login: PropTypes.func.isRequired,
 	t: PropTypes.func.isRequired,
 	// openPopup: PropTypes.func.isRequired,
-	tfaNeeded: PropTypes.bool.isRequired,
-	tfaType: PropTypes.string.isRequired,
-	loginWithTfa: PropTypes.func.isRequired,
+	tfaNeeded: PropTypes.bool,
+	tfaType: PropTypes.string,
+	loginWithTfa: PropTypes.func,
 	token: PropTypes.object.isRequired,
 	isFetching: PropTypes.bool.isRequired
 };

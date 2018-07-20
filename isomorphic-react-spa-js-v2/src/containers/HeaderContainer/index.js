@@ -1,22 +1,20 @@
 import {connect} from 'react-redux';
-import {Profile} from 'components';
-import {logout} from '../../redux/actions/session';
+import {Header} from 'components';
 
 const mapStateToProps = state => {
   const {isAuth, email, token, isFetching} = state.session;
+  const {env} = state;
   return {
     isAuth,
     email,
     token,
-    isFetching
+    isFetching,
+    env
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    logout: () => {
-      return dispatch(logout())
-    }
     // login: userData => {
     //   return dispatch(login(userData))
     // },
@@ -32,7 +30,7 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export const ProfileContainer = connect(
+export const HeaderContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Profile);
+)(Header);

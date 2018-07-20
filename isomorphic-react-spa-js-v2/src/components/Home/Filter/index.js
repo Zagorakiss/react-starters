@@ -15,7 +15,9 @@ class Filter extends React.PureComponent {
     render () {
         // const {t, login, email, isFetching} = this.props;
         return (
-            <h1>Filter Component</h1>
+            <div className="filter-container">
+                <h1>Filter Component</h1>
+            </div>
         )
     }
 }

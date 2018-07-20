@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {setDeviceDetails} from '../../redux/actions/env';
 import {login, logout} from '../../redux/actions/session';
 // import * as _ from 'lodash';
+import {HeaderContainer} from '../../containers/HeaderContainer';
 
 const mapStateToProps = state => {
     return {
@@ -95,6 +96,7 @@ class Layout extends React.PureComponent {
         console.warn(filteredRoutes);
         return (
             <div id="layout">
+                <HeaderContainer />
                 <div id="routes">
                     {/* {renderRoutes(route && route.routes)} */}
                     {renderRoutes(filteredRoutes)}

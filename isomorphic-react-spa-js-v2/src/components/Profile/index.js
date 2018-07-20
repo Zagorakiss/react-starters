@@ -10,27 +10,45 @@ class Profile extends React.PureComponent {
         this.state = {
             // foo: 0
         }
-    }
+	}
+
+	logout = () => {
+		const {logout, t} = this.props;
+		// event.preventDefault()
+		logout()
+			.catch(error => {
+				if (!error.text) {
+					// openError(t('login.unknownError'))
+					console.warn(t('login.unknownError'));
+				}
+			})
+	}
 
     render () {
-        // const {t, login, email, isFetching} = this.props;
+        const {t, logout, email, isFetching, isAuth, token} = this.props;
         return (
-            <h1>Profile Component</h1>
+			<div className="profile-container">
+				<div className="profile">
+					<h1 className="profile__title">Profile Component</h1>
+					<button
+						className="button button_common"
+						onClick={this.logout}
+					>
+						{`Logout`}
+					</button>
+				</div>
+			</div>
         )
     }
 }
 
-// Profile.propTypes = {
-//   isAuth: PropTypes.bool.isRequired,
-//   login: PropTypes.func.isRequired,
-//   t: PropTypes.func.isRequired,
-//   email: PropTypes.string.isRequired,
-//   openPopup: PropTypes.func.isRequired,
-//   tfaNeeded: PropTypes.bool.isRequired,
-//   tfaType: PropTypes.string.isRequired,
-//   loginWithTfa: PropTypes.func.isRequired,
-//   token: PropTypes.object.isRequired,
-//   isFetching: PropTypes.bool.isRequired
-// };
+Profile.propTypes = {
+	isAuth: PropTypes.bool.isRequired,
+	logout: PropTypes.func.isRequired,
+	t: PropTypes.func.isRequired,
+	email: PropTypes.string.isRequired,
+	token: PropTypes.object.isRequired,
+	isFetching: PropTypes.bool.isRequired
+};
 
 export default translate('authorization')(Profile);

@@ -4,3 +4,4 @@ export {default as Profile} from './Profile';
 export {default as Filter} from './Home/Filter';
 export {default as MapOfProjects} from './Home/MapOfProjects';
 // export {default as FilteredList} from './FilteredList';
+export {default as Header} from './Header';

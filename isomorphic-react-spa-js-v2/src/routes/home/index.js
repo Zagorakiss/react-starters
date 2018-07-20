@@ -14,9 +14,11 @@ class HomeRoute extends React.PureComponent {
 
     render() {
         return (
-            <div>
-                <FilterContainer />
-                <MapOfProjectsContainer />
+            <div className="container-fluid">
+				<div className="row">
+                    <FilterContainer />
+                    <MapOfProjectsContainer />
+                </div>
             </div>
         );
     }
