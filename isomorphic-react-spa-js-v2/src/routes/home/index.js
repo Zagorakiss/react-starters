@@ -12,10 +12,6 @@ class HomeRoute extends React.PureComponent {
         }
     }
 
-    // static fetchData(dispatch) {
-    //     return getProjects(dispatch);
-    // }
-
     render() {
         return (
             <div>
