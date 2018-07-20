@@ -178,7 +178,7 @@ class Login extends React.PureComponent {
 	}
 
 	render () {
-		if (!this.props.isAuth) {
+		if (!this.props.isAuth && !this.props.isFetching) {
 			return (
 				<div>
 					<Helmet>
