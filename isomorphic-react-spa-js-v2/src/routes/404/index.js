@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {Link} from 'react-router-dom';
 // import {connect} from 'react-redux';
 // import {Redirect} from 'react-router';
 import {Validation, urlUtils} from 'utils';
@@ -24,11 +25,17 @@ class Page404 extends React.PureComponent {
             const urlParams = urlUtils.parseGetParams(window.location.href);
             console.dir(urlParams);
         }
-        this.props.history.push('/');
+        // this.props.history.push('/');
     }
 
     render() {
-        return null;
+        // return null;
+        return (
+            <div>
+                <h2>404</h2>
+                <Link to="/">to Home Page</Link>
+            </div>
+        )
     }
 
 }
