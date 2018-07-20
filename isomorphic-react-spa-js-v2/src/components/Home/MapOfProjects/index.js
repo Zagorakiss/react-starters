@@ -310,6 +310,7 @@ class MapOfProjects extends React.PureComponent {
                 >
                     Сменить язык на английский
                 </button>
+                <span className="icon-user" />
                 {/* <FilteredList items={projectsList} predicate={item => item.year}>
                     {item => <div key={item.key}>{item.name}</div>}
                 </FilteredList> */}

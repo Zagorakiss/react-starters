@@ -1,0 +1,191 @@
+// Variables /////////////////////////////////////////////////////////////////////////////////////
+$rob: 'Roboto';
+
+// Colors ////////////////////////////////////////////////////////////////////////////////////
+$white: #fff;
+$black: #000;
+$green: #23d178;
+$dark-green: #11d1aa;
+$blue:  #2b59dc;
+$red:   #ea4949; 
+$gray:  #999999; 
+$light-gray: #d6d6d6;
+$dark-gray: #1d1d30;
+$violet: #655cf7;
+// Colors END ////////////////////////////////////////////////////////////////////////////////////
+
+// PostCSS Custom Media Queries //////////////////////////////////////////////////////////////////
+// @custom-media --xs (width <= 767px);
+// @custom-media --sm (width >= 768px) and (width <= 991px);
+// @custom-media --md (width >= 992px) and (width <= 1199px);
+// @custom-media --lg (width >= 1200px);
+// Пример использования: @media (--xs) {...}
+// PostCSS Custom Media Queries END //////////////////////////////////////////////////////////////
+
+// Breakpoints ///////////////////////////////////////////////////////////////////////////////////////
+$xs-screen: 768px;
+$lg-screen: 1200px;
+$xs-height: 548px;
+
+@mixin respond-to($media) {
+    @if $media == desktop {
+        @media only screen and (min-width: $lg-screen) {
+            @content;
+        }
+    } @else if $media == handhelds {
+        @media only screen and (max-width: $lg-screen - 1) {
+            @content;
+        }
+    } @else if $media == tablet {
+        @media only screen and (min-width: $xs-screen) and (max-width: $lg-screen - 1) {
+            @content;
+        }
+    } @else if $media == mobile {
+        @media only screen and (max-width: $xs-screen - 1) {
+            @content;
+        }
+    } @else if $media == smallHeight {
+        @media only screen and (max-height: $xs-height - 1) {
+            @content;
+        }
+    }
+}
+
+// Пример использования: @include respond-to(handhelds) {/* Styles */}
+// Breakpoints END ///////////////////////////////////////////////////////////////////////////////////
+
+// Animations ///////////////////////////////////////////////////////////////////////////////////////
+@keyframes slideInDown {
+    from {
+        transform: translate3d(0, -100%, 0);
+        visibility: visible;
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomInDown {
+    from {
+        opacity: 0;
+        transform: scale3d(.1, .1, .1) translate3d(0, -1000px, 0);
+        animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);
+        animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+    }
+}
+
+@keyframes zoomInUp {
+    from {
+        opacity: 0;
+        transform: scale3d(.1, .1, .1) translate3d(0, 1000px, 0);
+        animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale3d(.475, .475, .475) translate3d(0, -60px, 0);
+        animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+    }
+}
+
+@keyframes zoomInLeft {
+    from {
+        opacity: 0;
+        transform: scale3d(.1, .1, .1) translate3d(-1000px, 0, 0);
+        animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale3d(.475, .475, .475) translate3d(10px, 0, 0);
+        animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+    }
+}
+
+@keyframes zoomInRight {
+  from {
+    opacity: 0;
+    transform: scale3d(.1, .1, .1) translate3d(1000px, 0, 0);
+    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale3d(.475, .475, .475) translate3d(-10px, 0, 0);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  }
+}
+
+@keyframes lineFill {
+  from {
+    width: 0px;
+  }
+}
+
+@keyframes bounceIn{
+    0% {
+        opacity: 0;
+        transform: scale(0.3) translate3d(0,0,0);
+    }
+    50% {
+        opacity: 0.9;
+        transform: scale(1.1);
+    }
+    80% {
+        opacity: 1;
+        transform: scale(0.89);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translate3d(0,0,0);
+    }
+}
+
+@keyframes zoomInAndOut {
+    from {
+        transform: scale3d(0.8, 0.8, 0.8);
+    }
+  
+    to {
+        transform: scale3d(1, 1, 1);
+    }
+}
