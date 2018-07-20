@@ -31,9 +31,16 @@ class Page404 extends React.PureComponent {
     render() {
         // return null;
         return (
-            <div>
-                <h2>404</h2>
-                <Link to="/">to Home Page</Link>
+            <div className="error-page-container">
+                <div className="error-page">
+                    <h2 className="error-page__title">404 - Page not found</h2>
+                    <Link
+                        to="/"
+                        className="button error-page__btn"
+                    >
+                        {`to Home Page`}
+                    </Link>
+                </div>
             </div>
         )
     }

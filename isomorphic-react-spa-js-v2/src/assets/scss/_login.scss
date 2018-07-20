@@ -149,7 +149,7 @@
         font-weight: normal;
         font-style: normal;
         font-stretch: normal;
-        line-height: 0.89;
+        line-height: 1;
         // margin: 0 0 25px 0;
         &_big {
             width: 227px;
@@ -201,13 +201,4 @@
             background: transparentize($green, .2)
         }
     }
-}
-
-.sso-zerion-preloader {
-    background-color: #314378;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
 }

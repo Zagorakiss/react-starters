@@ -1,0 +1,204 @@
+////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////// Buttons (Кнопки) //////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+.button {
+
+    // Общие стили:
+    transition: all 0.2s ease;
+    font: normal 18px/1 $rob;
+    font-family: $rob, system-ui;
+    position: relative;
+    text-align: center;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #f1f1f1;
+    border: solid 1px #ececec;
+    color: $black;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    // margin: 0 0 25px 0;
+
+    // Цвет - по умолчанию (зеленый):
+    &:hover {
+        background-color: $green;
+        border: solid 1px $green;
+        color: $white;
+    }
+    &:active {
+        background-color: $dark-green;
+        border: solid 1px $dark-green;
+        color: $white;
+    }
+
+    // Hover для всех кнопок
+    // &:hover {box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);}
+
+    // Пример записи в HTML:
+    // <button className="button green hover-blue active-red text-white">Text</button>
+
+    // Default button colors (Цвет кнопок по умолчанию)
+    &.violet {
+        border-color: $violet;
+        color: $violet;
+        &:hover {
+            color: $white;
+            background-color: $violet;
+        }
+    }
+    &.green {
+        border-color: $green;
+        color: $green;
+        &:hover {
+            color: $white;
+            background-color: $green;
+        }
+    }
+    &.blue {
+        border-color: $blue;
+        color: $blue;
+        &:hover {
+            color: $white;
+            background-color: $blue;
+        }
+    }
+    &.red {
+        border-color: $red;
+        color: $red;
+        &:hover {
+            color: $white;
+            background-color: $red;
+        }
+    }
+    &.gray {
+        border-color: $gray;
+        color: $gray;
+        &:hover {
+            color: $white;
+            background-color: $gray;
+        }
+    }
+    &.white {
+        border-color: $white;
+        color: $white;
+        &:hover {
+            color: $violet;
+            background-color: $white;
+        }
+    }
+    &.black {
+        border-color: $black;
+        color: $black;
+        &:hover {
+            color: $white;
+            background-color: $black;
+        }
+    }
+
+    // Hover colors
+    &.hover-violet {
+        &:hover {
+            background-color: $violet;
+        }
+    }
+    &.hover-blue {
+        &:hover {
+            background-color: $blue;
+        }
+    }
+    &.hover-green {
+        &:hover {
+            background-color: $green;
+        }
+    }
+    &.hover-red {
+        &:hover {
+            background-color: $red;
+        }
+    }
+    &.hover-gray {
+        &:hover {
+            background-color: $gray;
+        }
+    }
+    &.hover-white {
+        &:hover {
+            background-color: $white;
+        }
+    }
+    &.hover-black {
+        &:hover {
+            background-color: $black;
+        }
+    }
+
+    // Active colors (Цвета кнопок при клике)
+    &.active-violet {
+        &:active {
+            background-color: $violet;
+        }
+    }
+    &.active-red {
+        &:active {
+            background-color: $red;
+        }
+    }
+    &.active-green {
+        &:active {
+            background-color: $green;
+        }
+    }
+    &.active-blue {
+        &:active {
+            background-color: $blue;
+        }
+    }
+    &.active-gray {
+        &:active {
+            background-color: $gray;
+        }
+    }
+    &.active-white {
+        &:active {
+            background-color: $red;
+        }
+    }
+    &.active-black {
+        &:active {
+            background-color: $black;
+        }
+    }
+
+    // Text colors (Цвета текста)
+    &.text-violet {
+        color: $violet;
+    }
+    &.text-blue {
+        color: $blue;
+    }
+    &.text-green {
+        color: $green;
+    }
+    &.text-red {
+        color: $red;
+    }
+    &.text-gray {
+        color: $gray;
+    }
+    &.text-white {
+        color: $white;
+    }
+    &.text-black {
+        color: $black;
+    }
+
+	// Indi Styles
+	//
+}
