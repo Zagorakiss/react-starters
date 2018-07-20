@@ -89,6 +89,12 @@ html, body, #app, #layout {
     font-family: $rob, Roboto, system-ui;
 }
 
+html, body {
+    margin: 0;;
+    padding: 0;
+    position: relative;
+}
+
 #routes {
     min-height: 100%;
     height: auto;
@@ -108,7 +114,7 @@ html, body, #app, #layout {
     padding: 12px 20px;
     border-radius: 1px;
     background-color: $red;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 300;
     color: $white;
     line-height: 1;
@@ -118,7 +124,7 @@ html, body, #app, #layout {
     animation-timing-function: linear;
     animation-fill-mode: forwards;
     @include respond-to(mobile) {
-        font-size: 15px;
+        font-size: 14px;
     }
     &::before {
         content: " ";
@@ -136,68 +142,7 @@ html, body, #app, #layout {
             left: calc(50% - 4px);
         }
     }
-    &_kyc {
-        display: inline-block;
-        width: auto;
-        margin: 20px 0 0;
-        max-width: 100%;
-        word-wrap: break-word;
-        word-break: break-all;
-    }
-    &_setting {
-        margin-top: 30px;
-        width: 50%;
-        @include respond-to(handhelds) {
-            width: 100%;
-        }
-    }
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////// position: sticky /////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////
-
-// .sticky {
-// 	position: -webkit-sticky;
-// 	position: sticky;
-// 	top: 0px;
-// 	margin-bottom: 60px;
-// 	padding-top: 95px;
-// }
-// // clearfix для sticky
-// .sticky:before,
-// .sticky:after {
-// 	content: '';
-// 	display: table;
-// }
-
-
-
-
-// No Scroll while Nav is Opened //
-.noscroll {
-    overflow: hidden;
-    @include respond-to(mobile) {
-        #routes {
-            display: none;
-        }
-        #layout {
-            background: transparent;
-        }
-    }
-}
-
-.height-null {
-    height: 0 !important;
-}
-
-body, html {
-    margin: 0;;
-    padding: 0;
-    height: 100%;
-    position: relative;
-}
-// No Scroll while Nav is Opened END //
 
 #layout {
     // background-image: url(../img/logo-black-bg.png);

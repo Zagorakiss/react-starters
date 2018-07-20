@@ -20,11 +20,17 @@ const routeConfig = [
                 exact: true,
                 type: 'protected'
             },
+            // {
+            //     component: LoginRoute,
+            //     path: '/login',
+            //     exaxt: true,
+            //     type: 'guest'
+            // },
             {
                 component: LoginRoute,
                 path: '/login',
                 exaxt: true,
-                type: 'guest'
+                type: 'common'
             },
             {
                 component: Page404,

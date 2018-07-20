@@ -48,10 +48,10 @@ class Header extends React.PureComponent {
 							</button>
 						</MenuItem>
 						<MenuItem isAuth={isAuth} fallbackLink={`/login/`} mainLink={`/profile/`}>
-							<span class="menu__icon icon-star" />
+							<span className="menu__icon icon-star" />
 						</MenuItem>
 						<MenuItem isAuth={isAuth} fallbackLink={`/login/`} mainLink={`/profile/`}>
-							<span class="menu__icon icon-user" />
+							<span className="menu__icon icon-user" />
 						</MenuItem>
 						{/* <MenuItem authRequired={true} isAuth={isAuth}>
 							<button onClick={this.toggleSearch} className="menu__link">

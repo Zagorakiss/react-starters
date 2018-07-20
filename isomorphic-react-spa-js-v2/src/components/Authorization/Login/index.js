@@ -10,6 +10,7 @@ import {translate} from 'react-i18next';
 // import i18n from '../../../config/i18n';
 import {Helmet} from 'react-helmet';
 import {Link} from 'react-router-dom';
+import {Redirect} from 'react-router';
 
 class Login extends React.PureComponent {
 
@@ -62,35 +63,35 @@ class Login extends React.PureComponent {
   //     .catch(error => { return Promise.reject(error) })
   // }
 
-  renderErrorMessage() {
-	// if (this.props.session.error !== undefined) {
-	// 	return (
-	// 		<div className="error-text-block">
-	// 			{this.props.session.error}
-	// 		</div>
-	// 	);
-	// }
-	return null;
-}
+	renderErrorMessage() {
+		if (this.props.error && this.props.error !== '') {
+			return (
+				<div className="error-text-block error-text-block_centered">
+					{this.props.error}
+				</div>
+			);
+		}
+		return null;
+	}
 
-renderCheckbox() {
-	// return (
-	//     <div className="checkbox checkbox_login">
-	//         <input type="checkbox" id="remember-me" className="checkbox__input"
-	//                 value={this.state.rememberMe.value} checked={this.state.rememberMe.value}
-	//                 onChange={this.handleChangeRememberMe}/>
-	//         <label htmlFor="remember-me" className="checkbox__label">
-	//             <div className="checkbox__label__box">
-	//                 <i className="checkbox__icon icon-check3" aria-hidden="true"/>
-	//             </div>
-	//             <div className="checkbox__label__text">{i18n('Remember me')}</div>
-	//         </label>
-	//     </div>
-	// );
-	return null;
-}	
+	renderCheckbox() {
+		// return (
+		//     <div className="checkbox checkbox_login">
+		//         <input type="checkbox" id="remember-me" className="checkbox__input"
+		//                 value={this.state.rememberMe.value} checked={this.state.rememberMe.value}
+		//                 onChange={this.handleChangeRememberMe}/>
+		//         <label htmlFor="remember-me" className="checkbox__label">
+		//             <div className="checkbox__label__box">
+		//                 <i className="checkbox__icon icon-check3" aria-hidden="true"/>
+		//             </div>
+		//             <div className="checkbox__label__text">{i18n('Remember me')}</div>
+		//         </label>
+		//     </div>
+		// );
+		return null;
+	}
 
-  	renderLoginForm() {
+	renderLoginForm() {
 		const {t, isFetching} = this.props;
 		return (
 			// <Form onSubmit={this.handleSubmit}>
@@ -178,17 +179,20 @@ renderCheckbox() {
 
 	render () {
 		if (!this.props.isAuth) {
-            return (
-                <div>
-                    <Helmet>
-                        <title>Blockchain.ru - Map of Projects</title>
-                    </Helmet>
-                    {this.renderLoginForm()}
-                </div>
-            );
-        }
-        this.props.history.push('/');
-        return null;
+			return (
+				<div>
+					<Helmet>
+						<title>Blockchain.ru - Map of Projects</title>
+					</Helmet>
+					{this.renderLoginForm()}
+				</div>
+			);
+		}
+		return (
+			<Redirect to="/" push={true}/>
+		);
+		// this.props.history.push('/');
+		// return null;
 	}
 }
 
@@ -201,7 +205,8 @@ Login.propTypes = {
 	tfaType: PropTypes.string,
 	loginWithTfa: PropTypes.func,
 	token: PropTypes.object.isRequired,
-	isFetching: PropTypes.bool.isRequired
+	isFetching: PropTypes.bool.isRequired,
+	error: PropTypes.string
 };
 
 export default translate('authorization')(Login);

@@ -5,14 +5,15 @@ import {login, loginWithTfa} from '../../../redux/actions/session';
 // import {openError} from '../../../redux/actions/systemMessages';
 
 const mapStateToProps = state => {
-  const {isAuth, email, tfaNeeded, tfaType, token, isFetching} = state.session;
+  const {isAuth, email, tfaNeeded, tfaType, token, isFetching, error} = state.session;
   return {
     isAuth,
     email,
     tfaNeeded,
     tfaType,
     token,
-    isFetching
+    isFetching,
+    error
   }
 }
 
