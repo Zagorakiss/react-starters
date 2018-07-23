@@ -1,3 +1,180 @@
+// Params
+$width__filter: 315px;
+$color__filter: $dark-gray;
+
 .filter-container {
-    padding: 1px;
+	// padding: 1px;
+	box-sizing: border-box;
+	// display: inline-flex;
+	position: absolute;
+    top: 0;
+	left: 0;
+	&.is-closed {
+		// z-index: -1;
+	}
+
+	.filter {
+		// display: flex;
+		flex-direction: column;
+		width: $width__filter;
+		height: 100vh;
+		overflow: scroll;
+		background-color: $color__filter;
+		transition: .5s;
+		border-right: 1px solid $gray;
+		
+		&.is-closed {
+			transform: translateX(-316px);
+		}
+
+		// TOP ////////////////////////////////////////////////
+		&__top {
+			height: 124px;
+			width: 100%;
+			display: flex;
+			align-items: center;
+			position: relative;
+			padding-left: 40px;
+			padding-right: 30px;
+    		justify-content: space-between;
+		}
+		&__title {
+			display: inline-flex;
+			&__text {
+				font-size: 20px;
+				font-weight: 300;
+				font-style: normal;
+				font-stretch: normal;
+				line-height: normal;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+				color: $violet;
+			}
+			&__icon {
+				font-size: 24px;
+				color: $violet;
+				margin-right: 8px;
+			}
+		}
+
+		&__toggle {
+			position: absolute;
+			top: 52px;
+			right: 30px;
+			padding: 0;
+			background: transparent;
+			border: none;
+			cursor: pointer;
+			transition: opacity .2s ease;
+			&__icon {
+				font-size: 20px;
+				color: $violet;
+			}
+			&:hover {
+				opacity: .7;
+			}
+		}
+		// TOP END ////////////////////////////////////////////////
+
+		// BLOCKS ////////////////////////////////////////////////
+		&__block-container {
+			width: 100%;
+			min-height: 90px;
+			display: flex;
+			flex-direction: column;
+			border-bottom: 1px solid $gray;
+		}
+
+		&__block {
+			padding: 20px 30px;
+			position: relative;
+			&__title {
+				text-transform: uppercase;
+				font-size: 20px;
+				font-weight: normal;
+				font-style: normal;
+				font-stretch: normal;
+				line-height: normal;
+				letter-spacing: 1px;
+				text-align: left;
+				color: $white;
+			}
+			&__subtitle {
+				font-size: 12px;
+				font-weight: 300;
+				letter-spacing: 0.6px;
+				color: $white;
+			}
+			&__content {
+				margin-top: 10px;
+				&_fields {
+					display: flex;
+				}
+			}
+			&__arrow {
+				position: absolute;
+				right: 30px;
+				top: calc(50% - 10px);
+				color: $violet;
+				font-size: 20px;
+				opacity: 0;
+			}
+			&_link {
+				transition: all .2s ease;
+				cursor: pointer;
+				&:hover, &.active {
+					background: transparentize($white, 0.92);
+					.filter__block__arrow {
+						opacity: 1;
+					}
+					.filter__block__subtitle {
+						color: $violet;
+					}
+				}
+				&:active {
+					opacity: .8;
+				}
+			}
+		}
+		&__field-container {
+			margin-right: 30px;
+		}
+		&__field {
+			width: 80px;
+			height: 20px;
+			padding: 0 6px;
+			background-color: transparent;
+			border: solid 1px $white;
+			font-size: 10px;
+			font-weight: normal;
+			font-style: normal;
+			font-stretch: normal;
+			line-height: normal;
+			letter-spacing: 0.5px;
+			text-align: left;
+			color: $white;
+			outline: none;
+			transition: all .2s ease;
+			&:focus {
+				color: $green;
+			}
+			&::-webkit-input-placeholder {
+				color: rgba(96, 96, 96, 0.6);
+			}
+			
+			&::-moz-placeholder {
+				color: rgba(96, 96, 96, 0.6);
+			}
+			
+			&:-moz-placeholder {
+				color: rgba(96, 96, 96, 0.6);
+			}
+			
+			&:-ms-input-placeholder {
+				color: rgba(96, 96, 96, 0.6);
+			}
+
+		}
+		// BLOCKS END ////////////////////////////////////////////////
+	}
 }

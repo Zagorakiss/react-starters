@@ -160,7 +160,7 @@ class Login extends React.PureComponent {
 										to="/resetpass"
 										className="login__link"
 									>
-										Forgot your password ?
+										{`Forgot your password ?`}
 									</Link>
 									<Link
 										to="/register"
@@ -178,7 +178,7 @@ class Login extends React.PureComponent {
 	}
 
 	render () {
-		if (!this.props.isAuth && !this.props.isFetching) {
+		if (!this.props.isAuth) {
 			return (
 				<div>
 					<Helmet>

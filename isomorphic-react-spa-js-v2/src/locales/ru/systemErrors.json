@@ -1,8 +1,0 @@
-{
-  "systemErrors": {
-    "WrongUsernamePassword": "Неправильный логин или пароль",
-    "ServiceUnavailable": "Сервис временно недоступен",
-    "InternalServerError": "Ошибка сервера. Попробуйте еще раз через некоторое время.",
-    "userWithSuchNameAlreadyExists": "Пользователь с таким email уже зарегистрирован"
-  }
-}
