@@ -1,4 +1,4 @@
-# Map of blockchain projects (Isomorphic React SPA)
+# isomorphic-react-spa-js (v2.0)
 
 Works stable on Node.js v7.2.0
 # Installing
