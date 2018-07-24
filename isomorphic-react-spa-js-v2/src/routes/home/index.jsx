@@ -9,7 +9,7 @@ class HomeRoute extends React.PureComponent {
         super(props)
         this.state = {
             filter: {
-                isVisible: true,
+                isVisible: false,
                 params: {
                     capital: {
                         min: '',

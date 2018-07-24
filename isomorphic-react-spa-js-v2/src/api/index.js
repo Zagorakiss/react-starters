@@ -39,7 +39,7 @@ const parseResponse = (response) => {
 			if (process.browser) {
 				if (response.status === 401 && !store.getState().session.isFetching) {
 					loginWithToken()
-						.catch(() => store.dispatch(logout()))
+						// .catch(() => store.dispatch(logout()))
 				}
 				// else {
 				//   if (i18next.exists(`systemErrors:${json.text}`)) {
@@ -61,7 +61,8 @@ const loginWithToken = () => {
 		const tokenObj = JSON.parse(localStorage.getItem('token'));
 		const token = _.get(tokenObj, `refresh_token`);
 		store.dispatch(login(token))
-			.catch(er => Promise.reject(er))
+			// .catch(er => Promise.reject(er))
+			.catch(() => store.dispatch(logout()))
 	}
 }
 

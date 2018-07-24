@@ -1,0 +1,118 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "d3-layout-orbit",
+        "scope": null,
+        "escapedName": "d3-layout-orbit",
+        "name": "d3-layout-orbit",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Users/Zagora/Documents/bcmap/map-projects"
+    ]
+  ],
+  "_from": "d3-layout-orbit@latest",
+  "_id": "d3-layout-orbit@1.0.2",
+  "_inCache": true,
+  "_location": "/d3-layout-orbit",
+  "_nodeVersion": "7.7.3",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/d3-layout-orbit-1.0.2.tgz_1506565363083_0.26657625124789774"
+  },
+  "_npmUser": {
+    "name": "elijahmeeks",
+    "email": "elijahmeeks@gmail.com"
+  },
+  "_npmVersion": "4.1.2",
+  "_phantomChildren": {
+    "d3-array": "1.2.1",
+    "d3-axis": "1.0.8",
+    "d3-brush": "1.0.4",
+    "d3-chord": "1.0.4",
+    "d3-collection": "1.0.4",
+    "d3-dispatch": "1.0.3",
+    "d3-drag": "1.2.1",
+    "d3-dsv": "1.0.8",
+    "d3-ease": "1.0.3",
+    "d3-force": "1.1.0",
+    "d3-path": "1.0.5",
+    "d3-polygon": "1.0.3",
+    "d3-quadtree": "1.0.3",
+    "d3-queue": "3.0.7",
+    "d3-random": "1.1.0",
+    "d3-request": "1.0.6",
+    "d3-selection": "1.3.0",
+    "d3-shape": "1.2.0",
+    "d3-time": "1.0.8",
+    "d3-time-format": "2.1.1",
+    "d3-timer": "1.0.7",
+    "d3-transition": "1.1.1",
+    "d3-voronoi": "1.1.2",
+    "d3-zoom": "1.7.1"
+  },
+  "_requested": {
+    "raw": "d3-layout-orbit",
+    "scope": null,
+    "escapedName": "d3-layout-orbit",
+    "name": "d3-layout-orbit",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/d3-layout-orbit/-/d3-layout-orbit-1.0.2.tgz",
+  "_shasum": "8da372ab8d896674853230c3a8fbe47d8947e012",
+  "_shrinkwrap": null,
+  "_spec": "d3-layout-orbit",
+  "_where": "/Users/Zagora/Documents/bcmap/map-projects",
+  "author": {
+    "name": "Elijah Meeks",
+    "url": "http://www.elijahmeeks.com"
+  },
+  "bugs": {
+    "url": "https://github.com/emeeks/d3.layout.orbit/issues"
+  },
+  "dependencies": {
+    "d3": "^4.10.2"
+  },
+  "description": "A layout that represents hierarchical data as a series of nested orbits",
+  "devDependencies": {},
+  "directories": {
+    "examples": "examples"
+  },
+  "dist": {
+    "shasum": "8da372ab8d896674853230c3a8fbe47d8947e012",
+    "tarball": "https://registry.npmjs.org/d3-layout-orbit/-/d3-layout-orbit-1.0.2.tgz"
+  },
+  "gitHead": "d041f27451bdf1cdb6447f8daa546556c7f68392",
+  "homepage": "https://github.com/emeeks/d3.layout.orbit",
+  "keywords": [
+    "d3",
+    "generator",
+    "layout",
+    "hierarchical"
+  ],
+  "license": "Unlicense",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "elijahmeeks",
+      "email": "elijahmeeks@gmail.com"
+    }
+  ],
+  "name": "d3-layout-orbit",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emeeks/d3.layout.orbit.git"
+  },
+  "scripts": {},
+  "version": "1.0.2"
+}

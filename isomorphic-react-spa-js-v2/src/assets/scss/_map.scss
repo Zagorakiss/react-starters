@@ -1,6 +1,6 @@
 .home-container {
 	position: relative;
-	padding: 10px 330px;
+	// padding: 10px 330px;
 	.filter-toggle {
 		background: transparent;
 		border: none;
@@ -49,5 +49,15 @@
 
 	.map {
 		// display: flex;
+	}
+}
+
+.orbits {
+	width: 100%;
+	height: 100vh;
+	padding: 0 10% 0 25%;
+	svg {
+		width: 100%;
+		height: 100vh;
 	}
 }

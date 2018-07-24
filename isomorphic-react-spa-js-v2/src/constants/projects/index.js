@@ -254,5 +254,5 @@ export const projects = [
       "year": 2013,
       "marketcap": 130.84,
       "logo": "https://s3.eu-central-1.amazonaws.com/bcwallet/mobile/resource_logo-c0f42fe6037e2ef5ac464d84fa8bcdab.png"
-    },
+    }
 ];

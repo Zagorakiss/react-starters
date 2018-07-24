@@ -39,11 +39,8 @@
             }
         ],
         "block-scoped-var": "error",
-        "block-spacing": "error",
-        "brace-style": [
-            "error",
-            "1tbs"
-        ],
+        "block-spacing": "off",
+        "brace-style": "off",
         "callback-return": "error",
         "camelcase": "off",
         "capitalized-comments": "off",

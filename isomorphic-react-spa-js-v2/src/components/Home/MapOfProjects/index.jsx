@@ -4,7 +4,8 @@ import {translate} from 'react-i18next';
 import i18n from 'config/i18n';
 // import scrollUp from 'utils';
 // import FilteredList from 'components';
-import projects from 'constants/projects';
+import {projects} from 'constants/projects';
+import Orbits from './orbits';
 
 class MapOfProjects extends React.PureComponent {
 
@@ -34,7 +35,33 @@ class MapOfProjects extends React.PureComponent {
     }
 
     componentDidMount() {
-      console.dir(projects);
+        console.dir(projects);
+    }
+
+    renderTempBlock = () => {
+        const {t, isAuth, isFetching} = this.props;
+        // return (
+        //     <div className="tempBlock">
+        //         <h1>MapOfProjects Component</h1>
+        //         <h2>{`isAuth: ${isAuth}`}</h2>
+        //         {t('login.heading')}
+        //         <button
+        //             onClick={() => i18n.changeLanguage('ru')}
+        //         >
+        //             Сменить язык на русский
+        //         </button>
+        //         <button
+        //             onClick={() => i18n.changeLanguage('en')}
+        //         >
+        //             Сменить язык на английский
+        //         </button>
+        //         <span className="icon-user" />
+        //         {/* <FilteredList items={projectsList} predicate={item => item.year}>
+        //             {item => <div key={item.key}>{item.name}</div>}
+        //         </FilteredList> */}
+        //     </div>
+        // )
+        return null
     }
 
     render () {
@@ -42,23 +69,8 @@ class MapOfProjects extends React.PureComponent {
         return (
             <div className="map-container">
 				<div className="map">
-					<h1>MapOfProjects Component</h1>
-					<h2>{`isAuth: ${isAuth}`}</h2>
-					{t('login.heading')}
-					<button
-						onClick={() => i18n.changeLanguage('ru')}
-					>
-						Сменить язык на русский
-					</button>
-					<button
-						onClick={() => i18n.changeLanguage('en')}
-					>
-						Сменить язык на английский
-					</button>
-					<span className="icon-user" />
-					{/* <FilteredList items={projectsList} predicate={item => item.year}>
-						{item => <div key={item.key}>{item.name}</div>}
-					</FilteredList> */}
+                    {this.renderTempBlock()}
+                    <Orbits />
 				</div>
             </div>
         )
