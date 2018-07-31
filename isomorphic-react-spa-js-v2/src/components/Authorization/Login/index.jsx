@@ -11,6 +11,8 @@ import {translate} from 'react-i18next';
 import {Helmet} from 'react-helmet';
 import {Link} from 'react-router-dom';
 import {Redirect} from 'react-router';
+import {NotificationContainer} from 'react-notifications';
+import {createNotification} from 'utils';
 
 class Login extends React.PureComponent {
 
@@ -25,21 +27,21 @@ class Login extends React.PureComponent {
 	handleSubmit = (event) => {
 		const {login, t} = this.props;
 		event.preventDefault()
-		const result = {
+		const userData = {
 			email: this.state.email,
 			password: this.state.password
 		}
-		login(result)
+		login(userData)
 			.catch(error => {
-				if (!error.text) {
-					// openError(t('login.unknownError'))
-					console.warn(t('login.unknownError'));
+				if (error.text) {
+					createNotification('error', t(`login.${error.text}`), 'Error');
+				} else {
+					createNotification('error', t(this.props.error), 'Error');
 				}
 			})
 	}
 
 	handleInputChange = (event) => {
-		console.dir(event.target);
 		this.setState({[event.target.name]: event.target.value});
 	}
 
@@ -146,7 +148,7 @@ class Login extends React.PureComponent {
 									</div>
 									{/* <button type="button" className="login__forgot-pass" onClick={this.props.setActiveModal.bind(this, 4)}>Fotgot Password?</button> */}
 								</div>
-								{this.renderErrorMessage()}
+								{/* {this.renderErrorMessage()} */}
 								{/* {this.renderCheckbox()} */}
 								<div className="login__btn-group">
 									<button
@@ -157,13 +159,13 @@ class Login extends React.PureComponent {
 										{`Login`}
 									</button>
 									<Link
-										to="/resetpass"
+										to="/recovery"
 										className="login__link"
 									>
 										{`Forgot your password ?`}
 									</Link>
 									<Link
-										to="/register"
+										to="/signup"
 										className="button login__btn login__btn_big"
 									>
 										{`Create an account`}
@@ -185,6 +187,7 @@ class Login extends React.PureComponent {
 						<title>Blockchain.ru - Map of Projects</title>
 					</Helmet>
 					{this.renderLoginForm()}
+					<NotificationContainer />
 				</div>
 			);
 		}

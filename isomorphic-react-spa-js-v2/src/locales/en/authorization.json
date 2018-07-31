@@ -31,7 +31,9 @@
       "recovery": "Recover password",
       "login": "Log in",
       "passwordLabel": "Password",
-      "unknownError": "Unknown error occurred"
+      "unknownError": "Unknown error occurred",
+      "WrongUsernamePassword": "Wrong Username or Password",
+      "connectionFailed": "Connection Failed"
     },
     "emailConfirmed": {
       "heading": "Your email confirmed",
@@ -48,12 +50,13 @@
     "newPassword": {
       "resetText": "Password has been reset.Enter new to log in.",
       "changedText": "Password successfully changed",
-      "heading": "Log in",
+      "heading": "New Password",
       "dontMatch": "Passwords do not match",
       "login": "Log in",
       "firstInputLabel": "New password",
       "secondInputLabel": "Repeat password",
-      "submit": "Save"
+      "submit": "Save",
+      "wrongUuid": "Incorrect user id"
     },
     "recovery": {
       "emailSent": "We sent instroction of reseting password to address:",

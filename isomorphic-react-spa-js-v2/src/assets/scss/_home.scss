@@ -1,0 +1,121 @@
+.home-container {
+	position: relative;
+	padding: 1px;
+	// padding: 10px 330px;
+	.filter-toggle {
+		background: transparent;
+		border: none;
+		display: inline-flex;
+		align-items: center;
+		position: absolute;
+		left: 40px;
+		top: 50px;
+		z-index: 10;
+		cursor: pointer;
+		transition: all .2s ease;
+		&.is-hidden {
+			z-index: 0;
+		}
+		&:hover {
+			opacity: .7;
+		}
+		&__icon {
+			font-size: 24px;
+			color: $violet;
+			margin-right: 8px;
+			&_arrow {
+				font-size: 20px;
+				margin-left: 15px;
+			}
+		}
+		&__text {
+			font-size: 20px;
+			font-weight: 300;
+			font-style: normal;
+			font-stretch: normal;
+			line-height: normal;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+			color: $violet;
+		}
+	}
+	.selected-params {
+		min-height: 100px;
+		background-color: $violet;
+		position: fixed;
+		bottom: 0;
+		left: 315px;
+		right: 315px;
+		animation: fadeIn .2s ease;
+		padding: 25px 230px 25px 50px;
+		&__btn-container {
+			position: absolute;
+			top: 16px;
+			bottom: 16px;
+			right: 60px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+		&__btn {
+			width: 140px;
+			height: 40px;
+			background-color: transparent;
+			border: solid 2px $white;
+			display: flex;
+			justify-content: center;
+			align-content: center;
+			font-size: 18px;
+			font-weight: 300;
+			font-style: normal;
+			font-stretch: normal;
+			line-height: normal;
+			letter-spacing: 0.9px;
+			text-align: center;
+			color: $white;
+			text-transform: uppercase;
+			cursor: pointer;
+			transition: all .2s ease;
+			&:hover {
+				background-color: $white;
+				color: $violet;
+			}
+			&:active {
+				background-color: $white;
+				color: $violet;
+				opacity: .75;
+			}
+			&_reset {
+				color: transparentize($white, 0.5);
+				border: solid 2px transparent;
+			}
+		}
+		&__title {
+			font-size: 18px;
+			text-transform: uppercase;
+			font-weight: normal;
+			font-style: normal;
+			font-stretch: normal;
+			line-height: normal;
+			letter-spacing: 0.9px;
+			text-align: left;
+			color: $white;
+			margin-bottom: 10px;
+		}
+		&__list {
+			font-size: 18px;
+    		font-weight: 300;
+			font-style: normal;
+			font-stretch: normal;
+			line-height: normal;
+			letter-spacing: 1px;
+			text-align: left;
+			color: $white;
+		}
+		&__item {
+			display: inline-block;
+			margin-right: 10px;
+			margin-top: 5px;
+		}
+	}
+}

@@ -31,7 +31,9 @@
       "recovery": "Восстановление пароля",
       "login": "Войти",
       "passwordLabel": "Пароль",
-      "unknownError": "Произошла неизвестная ошибка"
+      "unknownError": "Произошла неизвестная ошибка",
+      "WrongUsernamePassword": "Неправильный логин или пароль",
+      "connectionFailed": "Не удалось соединиться с сервером"
     },
     "emailConfirmed": {
       "heading": "Ваш e-mail был подтвержден",
@@ -48,12 +50,13 @@
     "newPassword": {
       "resetText": "Пароль успешно сброшен. Введите новый пароль для входа.",
       "changedText": "Пароль успешно изменен",
-      "heading": "Авторизация",
+      "heading": "Новый пароль",
       "dontMatch": "Пароли не совпадают",
       "login": "Войти",
       "firstInputLabel": "Новый пароль",
       "secondInputLabel": "Повторите пароль",
-      "submit": "Сохранить"
+      "submit": "Сохранить",
+      "wrongUuid": "Некорректный id пользователя"
     },
     "recovery": {
       "emailSent": "Мы отправили вам инструкцию по сбросу пароля на адрес:",

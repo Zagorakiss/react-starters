@@ -1,73 +1,48 @@
-// @flow
-import React, { Component } from 'react'
+import * as React from 'react';
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { Input } from '../../FormComponents/Input'
-import { Button } from '../../Buttons'
-import { FormTemplate } from '../Templates/FormTemplate'
-import { Description } from '../Templates/Description'
-import { Fieldset } from '../Templates/Fieldset'
-import { Checkbox } from '../../FormComponents/Checkbox'
-import { CustomLink } from '../../CustomLink'
+import {FormTemplate} from '../Templates/FormTemplate'
+import {Description} from '../Templates/Description'
+import {Fieldset} from '../Templates/Fieldset'
 import ReCAPTCHA from 'react-google-recaptcha'
-import MediaQuery from 'react-responsive'
+import {translate} from 'react-i18next';
+import {NotificationContainer} from 'react-notifications';
+import {createNotification} from 'utils';
 
-type Props = {
-  signup: Function,
-  openErrorMessage: Function,
-  isFetching: boolean,
-  t: Function
-}
+class Form extends React.PureComponent {
 
-type State = {
-  email: string,
-  passwordFirst: string,
-  passwordSecond: string,
-  verified: boolean,
-  captchaData: string,
-  privacyState: boolean
-}
+  // recaptcha: ReCAPTCHA
 
-export class Form extends Component<Props, State> {
-  static propTypes = {
-    signup: PropTypes.func.isRequired,
-    openErrorMessage: PropTypes.func.isRequired,
-    isFetching: PropTypes.bool.isRequired,
-    t: PropTypes.func.isRequired
-  }
-
-  recaptcha: ReCAPTCHA
-
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
     this.state = {
       email: '',
       passwordFirst: '',
       passwordSecond: '',
       verified: false,
       captchaData: '',
-      privacyState: false
+      privacyState: true
     }
   }
 
-  reCaptchaSuccess = (value: string) => {
+  reCaptchaSuccess = (value) => {
     this.setState({
       verified: true,
       captchaData: value
     })
   }
 
-  takeInput = (field: { name: string, value: string }) => {
-    this.setState({[field.name]: field.value})
-  }
+  takeInput = (event) => {
+		this.setState({[event.target.name]: event.target.value});
+	}
 
-  getPrivacy = (state: boolean) => {
+  getPrivacy = (state) => {
     this.setState({
       privacyState: state
     })
   }
-  
-  onSubmit = (event: SyntheticEvent<FormTemplate>) => {
+
+  onSubmit = (event) => {
     event.preventDefault()
     if (this.state.privacyState) {
       if (this.state.verified) {
@@ -80,116 +55,129 @@ export class Form extends Component<Props, State> {
           this.props.signup(userData)
           this.recaptcha.reset()
         } else {
-          this.props.openErrorMessage(this.props.t('registration.form.dontMatch'))
+          console.warn('dontMatch');
+          createNotification('warning', this.props.t('registration.form.dontMatch'), 'Warning')
         }
       } else {
-        this.props.openErrorMessage(this.props.t('registration.form.capchaValidation'))
+        console.warn('capchaValidation');
+        createNotification('error', this.props.t('registration.form.capchaValidation'), 'Error')
       }
     } else {
-      this.props.openErrorMessage(this.props.t('registration.form.licenseValidation'))
+      console.warn('licenseValidation');
+      createNotification('error', this.props.t('registration.form.licenseValidation'), 'Error')
     }
   }
 
   render () {
-    const { t } = this.props
+    const {t} = this.props
 
     return (
-      <FormTemplate onSubmit={this.onSubmit}>
-        <Fieldset>
-          <Input
-            name='email'
-            type='email'
-            takeValue={this.takeInput}
-            label='Email'
-            placeholder='example@mail.com'
-            required
-          />
-          <Description>
-            {t('registration.form.email')}
-          </Description>
-        </Fieldset>
-        <Fieldset>
-          <Input
-            name='passwordFirst'
-            type='password'
-            takeValue={this.takeInput}
-            required
-            label={t('registration.form.passwordLabelFirst')}
-            pattern='[a-zA-Z0-9].{9,}'
-          />
-          <Description>
-            {t('registration.form.password')}
-          </Description>
-        </Fieldset>
-        <Input
-            name='passwordSecond'
-            type='password'
-            takeValue={this.takeInput}
-            required
-            label={t('registration.form.passwordLabelSecond')}
-            pattern='[a-zA-Z0-9].{9,}'
-          />
-        <ReCaptchaContainer>
-          <MediaQuery minWidth={400}>
-            {matches => {
-              if (matches) {
-                return (
-                  <ReCAPTCHA
-                    ref={e => this.recaptcha = e}
-                    sitekey='6LdAyTcUAAAAAPDU18WIj3sOzmBZceHgXdYjS7lW'
-                    onChange={this.reCaptchaSuccess} />
-                )
-              } else {
-                return (
-                  <ReCAPTCHA
-                    ref={e => this.recaptcha = e}
-                    sitekey='6LdAyTcUAAAAAPDU18WIj3sOzmBZceHgXdYjS7lW'
-                    onChange={this.reCaptchaSuccess}
-                    size='compact' />
-                )
-              }
-            }}
-          </MediaQuery>
-        </ReCaptchaContainer>
-        <Agreement>
-          <CheckboxContainer>
-            <Checkbox getState={this.getPrivacy} />
-          </CheckboxContainer>
-          <Text>
-            <span>{t('registration.form.policyAccept')}</span>
-            <CustomLink to='/license/policy'>
-              {t('registration.form.policy')}
-            </CustomLink>
-            <span>{t('registration.form.and')}</span>
-            <CustomLink to='/license/agreement'>
-              {t('registration.form.agreement')}
-            </CustomLink>
-          </Text>
-        </Agreement>
-        <Button
-          type='submit'
-          disabled={this.props.isFetching}>
-          {t('registration.form.openAccount')}
-        </Button>
-      </FormTemplate>
+      <div>
+        <form
+          onSubmit={this.onSubmit}
+          className={`login__form`}
+        >
+          <div className="login__field-group">
+            <div
+              className={`login__field-container login__field-container_email`}>
+              <input
+                name="email"
+                type="email"
+                onChange={this.takeInput}
+                label="Email"
+                placeholder="example@mail.com"
+                required
+                className="login__field"
+              />
+            </div>
+            <Description>
+              {t('registration.form.email')}
+            </Description>
+          </div>
+          <div className="login__field-group">
+            <div
+              className={`login__field-container login__field-container_password`}>
+              <input
+                name="passwordFirst"
+                type="password"
+                onChange={this.takeInput}
+                required
+                label={t('registration.form.passwordLabelFirst')}
+                pattern="[a-zA-Z0-9].{9,}"
+                placeholder="Password"
+                className="login__field"
+              />
+            </div>
+            <Description>
+              {t('registration.form.password')}
+            </Description>
+            <div
+              className={`login__field-container login__field-container_passwordSecond`}>
+              <input
+                name="passwordSecond"
+                type="password"
+                onChange={this.takeInput}
+                required
+                placeholder="Repeat password"
+                label={t('registration.form.passwordLabelSecond')}
+                pattern="[a-zA-Z0-9].{9,}"
+                className="login__field"
+              />
+            </div>
+          </div>
+          <ReCaptchaContainer>
+            <ReCAPTCHA
+              ref={e => this.recaptcha = e}
+              sitekey="6LdNgUMUAAAAABg_yhKQaW7bJOTfeJsjOI1j_E01"
+              onChange={this.reCaptchaSuccess}
+              theme="dark"
+              size="normal"
+              // size="invisible"
+              // badge="inline"
+            />
+          </ReCaptchaContainer>
+          <div className="login__btn-group">
+            <button
+              type="submit"
+              disabled={this.props.isFetching}
+              className="button login__btn login__btn_auto"
+            >
+              {t('registration.form.openAccount')}
+            </button>
+          </div>
+        </form>
+        <NotificationContainer />
+      </div>
     )
   }
 }
 
+Form.propTypes = {
+  signup: PropTypes.func.isRequired,
+  isFetching: PropTypes.bool.isRequired,
+  t: PropTypes.func.isRequired
+}
+
+export default translate('authorization')(Form);
+
 const Agreement = styled.div`
 display: flex;
 align-items: center;
-margin-bottom: 41px;
+margin-bottom: 40px;
 `
 
 const ReCaptchaContainer = styled.div`
-margin: 40px 0;
+// margin: 40px 0;
+margin: 60px 0 0 0;
+display: flex;
+justify-content: center;
+align-items: center;
 `
 
 const CheckboxContainer = styled.div`
-margin-right: 10px;
+// margin-right: 10px;
 `
 
 const Text = styled.span`
-color: var(--grey-purple);
+// color: var(--grey-purple);
 `

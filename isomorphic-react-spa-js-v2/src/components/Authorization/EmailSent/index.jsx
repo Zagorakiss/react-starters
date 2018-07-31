@@ -1,38 +1,15 @@
-// @flow 
-import * as React from 'react'
+import * as React from 'react';
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { Template } from '../Templates'
-import { ButtonText } from '../../Buttons/ButtonText'
-import { LetterIcon } from '../../Svg/LetterIcon'
-import { translate } from 'react-i18next'
+import {Template} from '../Templates'
+import {translate} from 'react-i18next'
+import {NotificationContainer} from 'react-notifications';
+import {createNotification} from 'utils';
 
-type Props = {
-  text: string,
-  email: string,
-  emailRepeat: Function,
-  openSuccessMessage: Function,
-  openErrorMessage: Function,
-  t: Function,
-  children: React.Node
-}
+class EmailSent extends React.PureComponent {
 
-type State = {
-  emailRepeated: boolean
-}
-
-@translate('authorization')
-export class EmailSent extends React.Component<Props, State> {
-  static propTypes = {
-    text: PropTypes.string.isRequired,
-    email: PropTypes.string.isRequired,
-    emailRepeat: PropTypes.func.isRequired,
-    openSuccessMessage: PropTypes.func.isRequired,
-    openErrorMessage: PropTypes.func.isRequired    
-  }
-  
-  constructor () {
-    super ()
+  constructor (props) {
+    super(props)
     this.state = {
       emailRepeated: false
     }
@@ -46,60 +23,65 @@ export class EmailSent extends React.Component<Props, State> {
             emailRepeated: true
           })
         })
-      this.props.openSuccessMessage(this.props.t('emailSent.emailRepeated'))
+      createNotification('success', this.props.t('emailSent.emailRepeated'), 'Success')
     } else {
-      this.props.openErrorMessage(this.props.t('emailSent.emailRepeatedError'))      
+      createNotification('success', this.props.t('emailSent.emailRepeatedError'), 'Success')
     }
   }
 
   render () {
-    const { t } = this.props
+    const {t} = this.props
     return (
-      <Template icon={<LetterIcon />} heading={t('emailSent.heading')} wide>
+      <div>
         <Text>
           {this.props.text}
           <Email>{this.props.email}</Email>
         </Text>
         <BreakLine />
         <Text secondary>
-          {t('emailSent.text')} <ButtonText type='button' onClick={this.emailRepeat}>
+          {t('emailSent.text')}
+          <button
+            type="button"
+            onClick={this.emailRepeat}
+            className="login__btn login__btn_text"
+          >
             {t('emailSent.button')}
-          </ButtonText>
+          </button>
         </Text>
         {this.props.children}
-      </Template>
+        <NotificationContainer />
+      </div>
     )
   }
 }
+
+EmailSent.propTypes = {
+  text: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  emailRepeat: PropTypes.func.isRequired
+}
+
+export default translate('authorization')(EmailSent);
 
 const Text = styled.p`
 margin: 0;
 margin-bottom: 45px;
 text-align: center;
-line-height: 25px;
-font-size: 18px;
+font-size: 16px;
+line-height: 1.4;
 width: 100%;
-@media (min-width: 640px) {
-  ${props => !props.secondary && 'width: 640px'};
-}
-@media (min-width: 500px) {
-  ${props => props.secondary && 'width: 400px'};
-}
-${props => props.secondary ? 
-  'color: var(--cool-grey);' : 
-  'color: var(--grey-purple);'}
 `
 const Email = styled.span`
   display: block;
   text-decoration: none;
-  line-height: 25px;
-  font-size: 18px;
-  color: var(--charcoal-grey-two);
+  line-height: 1.4;
+  font-size: 16px;
+  color: #655cf7;
   word-wrap: break-word; 
 `
 const BreakLine = styled.div`
   margin-bottom: 45px;
   width: 100%;
   height: 1px;
-  background-color: var(--pale-grey);
+  background-color: #d6d6d6;
 `

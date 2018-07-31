@@ -1,0 +1,28 @@
+{
+  "home": {
+    "selectedParams": {
+      "stage": "Stage",
+      "price": "Price",
+      "years": "Years",
+      "consensusAlgorithm": "Consensus Algorithm",
+      "marketcap": "Капитализация",
+      "finance": "Finance",
+      "technology": "Technology",
+      "industry": "Industries"
+    },
+    "filter": {
+      "finance": "Finance",
+      "technology": "Technology",
+      "industry": "Industries",
+      "comoncap": "Comon capitalization",
+      "marketcap": "Capitalization",
+      "stage": "Stage",
+      "price": "Price",
+      "years": "Years",
+      "consensusAlgorithm": "Consensus Algorithm"
+    },
+    "buttons": {
+      "filters": "Filters"
+    }
+  }
+}

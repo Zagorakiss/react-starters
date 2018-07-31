@@ -119,7 +119,8 @@ const login = (state, action) => {
         expirationTime: calcExpirationTime(action.expiresIn)
       }
     case SessionsActionTypes.LOGIN_FAILED:
-      let error = ''
+      // let error = ''
+      let error = 'login.connectionFailed';
       if (action.error) {
         error = action.error
       }

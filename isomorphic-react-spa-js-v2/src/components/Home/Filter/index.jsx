@@ -8,30 +8,59 @@ class Filter extends React.PureComponent {
     constructor(props) {
         super(props)
         this.state = {
-            // Now moved to the parent component
-            // filter: {
-            //     isVisible: true,
-            //     params: {}
-            // },
-            // data: {
-            //     rawData: {},
-            //     filteredData: {}
-            // }
+            filter: {
+                industries: [
+                    {
+                        name: 'Общая Капитализация',
+                        key: '',
+                        amount: 1234,
+                        active: true
+                    },
+                    {
+                        name: 'Финансы',
+                        key: 'finance',
+                        amount: 123,
+                        active: false
+                    },
+                    {
+                        name: 'Технологии',
+                        key: 'technology',
+                        amount: 123,
+                        active: false
+                    },
+                    {
+                        name: 'Индустрии',
+                        key: 'industry',
+                        amount: 123,
+                        active: false
+                    }
+                ]
+            }
         }
     }
 
-    // Now moved to the parent component
-    // toggleFilter = () => {
-    //     this.setState(() => {
-    //         return {
-    //             ...this.state,
-    //             filter: {
-    //                 ...this.state.filter,
-    //                 isVisible: this.state.filter.isVisible ? false : true
-    //             }
-    //         };
-    //     });
-    // }
+    componentWillReceiveProps(nextProps) {
+        if (this.props.filter.params.industry !== nextProps.filter.params.industry) {
+            this.setState(() => {
+                return {
+                    ...this.state,
+                    filter: {
+                        ...this.state.filter,
+                        industries: this.state.filter.industries.map((item, key) => {
+                            return (
+                                {
+                                    name: item.name,
+                                    key: item.key,
+                                    amount: item.amount,
+                                    active: item.key === nextProps.filter.params.industry.value
+                                }
+                            )
+                        })
+                    }
+                };
+            });
+        }
+    }
 
     renderCheckbox(paramGroup, paramName, labelText) {
         const {setParam} = this.props;
@@ -59,12 +88,13 @@ class Filter extends React.PureComponent {
         // return null;
     }
 
-    renderField(paramGroup, paramName, placeholderText) {
+    renderField(paramGroup, paramName, placeholderText, labelText) {
         const {setParam} = this.props;
         const {capital, consensus, price, years} = this.props.filter.params;
         return (
             <div
                 className="filter__field-container">
+                <div className="filter__label">{labelText}</div>
                 <input
                     onChange={(event) => setParam(paramGroup, paramName, event.target.value)}
                     type="text"
@@ -72,6 +102,7 @@ class Filter extends React.PureComponent {
                     placeholder={placeholderText}
                     className="filter__field"
                     spellCheck="false"
+                    value={this.props.filter.params[paramGroup][paramName]}
                 />
             </div>
         );
@@ -79,7 +110,8 @@ class Filter extends React.PureComponent {
 
     render () {
         const {t, isAuth, email, isFetching} = this.props;
-        const {filter, data, toggleFilter} = this.props;
+        const {filter, data, toggleFilter, setParam} = this.props;
+        const {industries} = this.state.filter;
         return (
             <div className={`filter-container ${filter.isVisible ? '' : 'is-closed'}`}>
                 <div className={`filter ${filter.isVisible ? '' : 'is-closed'}`}>
@@ -96,43 +128,36 @@ class Filter extends React.PureComponent {
                         </button>
                     </div>
                     <div className="filter__block-container">
-                        <div className="filter__block filter__block_link active">
-                            <div className="filter__block__title">Общая Капитализация</div>
-                            <div className="filter__block__subtitle">[1 234 проекта]</div>
-                            <span className="filter__block__arrow icon-arrow-filter" />
-                        </div>
-                        <div className="filter__block filter__block_link">
-                            <div className="filter__block__title">Индустрия 1</div>
-                            <div className="filter__block__subtitle">[123 проекта]</div>
-                            <span className="filter__block__arrow icon-arrow-filter" />
-                        </div>
-                        <div className="filter__block filter__block_link">
-                            <div className="filter__block__title">Индустрия 2</div>
-                            <div className="filter__block__subtitle">[123 проекта]</div>
-                            <span className="filter__block__arrow icon-arrow-filter" />
-                        </div>
-                        <div className="filter__block filter__block_link">
-                            <div className="filter__block__title">Индустрия 3</div>
-                            <div className="filter__block__subtitle">[123 проекта]</div>
-                            <span className="filter__block__arrow icon-arrow-filter" />
-                        </div>
+                        {industries.map((item, key) => {
+                            return (
+                                <div
+                                    className={`filter__block filter__block_link ${item.active ? 'active' : ''}`}
+                                    onClick={() => setParam('industry', 'value', item.key)}
+                                    key={key}
+                                >
+                                    <div className="filter__block__title">{item.name}</div>
+                                    <div className="filter__block__subtitle">{`[${item.amount} проекта]`}</div>
+                                    <span className="filter__block__arrow icon-arrow-filter" />
+                                </div>
+                            )
+                        })}
                     </div>
                     <div className="filter__block-container">
                         <div className="filter__block">
                             <div className="filter__block__title">Капитализация</div>
                             <div className="filter__block__content filter__block__content_fields">
-                                {this.renderField('capital', 'min', '123')}
-                                {this.renderField('capital', 'max', '123456')}
+                                {this.renderField('marketcap', 'min', '123', 'от')}
+                                {this.renderField('marketcap', 'max', '123456', 'до')}
                             </div>
                         </div>
                     </div>
                     <div className="filter__block-container">
                         <div className="filter__block">
-                            <div className="filter__block__title">Капитализация</div>
+                            <div className="filter__block__title">Стадия</div>
                             <div className="filter__block__content">
-                                {this.renderCheckbox('capital', 'checkbox1', 'pre-ICO')}
-                                {this.renderCheckbox('capital', 'checkbox2', 'pre-ICO')}
-                                {this.renderCheckbox('capital', 'checkbox3', 'pre-ICO')}
+                                {this.renderCheckbox('stage', 'preIco', 'pre-ICO')}
+                                {this.renderCheckbox('stage', 'ico', 'ICO')}
+                                {this.renderCheckbox('stage', 'tokenized', 'Tokenized')}
                             </div>
                         </div>
                     </div>
@@ -140,8 +165,8 @@ class Filter extends React.PureComponent {
                         <div className="filter__block">
                             <div className="filter__block__title">Стоимость</div>
                             <div className="filter__block__content filter__block__content_fields">
-                                {this.renderField('price', 'min', '123')}
-                                {this.renderField('price', 'max', '12345678')}
+                                {this.renderField('price', 'min', '123', 'от')}
+                                {this.renderField('price', 'max', '12345678', 'до')}
                             </div>
                         </div>
                     </div>
@@ -149,8 +174,8 @@ class Filter extends React.PureComponent {
                         <div className="filter__block">
                             <div className="filter__block__title">Года</div>
                             <div className="filter__block__content filter__block__content_fields">
-                                {this.renderField('years', 'min', '2010')}
-                                {this.renderField('years', 'max', '2018')}
+                                {this.renderField('year', 'min', '2010', 'от')}
+                                {this.renderField('year', 'max', '2018', 'до')}
                             </div>
                         </div>
                     </div>
@@ -158,8 +183,11 @@ class Filter extends React.PureComponent {
                         <div className="filter__block">
                             <div className="filter__block__title">Алгоритм консенсуса</div>
                             <div className="filter__block__content">
-                                {this.renderCheckbox('consensus', 'checkbox4', 'pre-ICO')}
-                                {this.renderCheckbox('consensus', 'checkbox5', 'pre-ICO')}</div>
+                                {this.renderCheckbox('consensusAlgorithm', 'pos', 'PoS')}
+                                {this.renderCheckbox('consensusAlgorithm', 'pow', 'PoW')}
+                                {this.renderCheckbox('consensusAlgorithm', 'poa', 'PoA')}
+                                {this.renderCheckbox('consensusAlgorithm', 'poc', 'PoC')}
+                            </div>
                         </div>
                     </div>
                 </div>

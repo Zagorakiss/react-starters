@@ -1,8 +1,7 @@
 import React from 'react'
-import { Template } from '../Templates/index'
-import { Description } from '../Templates/Description'
-import { Button } from '../../Buttons'
-import { translate } from 'react-i18next'
+import {Template} from '../Templates/index'
+import {Description} from '../Templates/Description'
+import {translate} from 'react-i18next'
 import styled from 'styled-components'
 
 export const EmailConfirmed = translate('authorization')(props =>
@@ -12,9 +11,9 @@ export const EmailConfirmed = translate('authorization')(props =>
       <Description>
         {props.t('emailConfirmed.text')}
       </Description>
-      <Button type='button' fullWidth link to='/login'>
+      <button type="button" fullWidth link to="/login">
         {props.t('emailConfirmed.button')}
-      </Button>
+      </button>
     </Container>
   </Template>
 )

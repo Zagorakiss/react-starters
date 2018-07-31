@@ -102,6 +102,7 @@ html, body {
 #routes {
     min-height: 100%;
     height: auto;
+    overflow: hidden;
 }
 
 
@@ -218,3 +219,19 @@ button[disabled], html input[disabled] {
     }
 }
 ///////////////////// Divider END ///////////////////////
+
+
+////////////////// TEMP ///////////////////////////
+.project-block {
+    width: 600px;
+    margin: 20px auto;
+    padding: 10px;
+    overflow: scroll;
+    border: 2px solid $green;
+    color: $violet;
+    &__param {
+        border: 1px solid $blue;
+        padding-left: 20px;
+        color: $white;
+    }
+}

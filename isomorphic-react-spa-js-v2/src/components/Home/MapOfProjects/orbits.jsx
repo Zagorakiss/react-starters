@@ -41,7 +41,9 @@ class Orbits extends React.PureComponent {
         .range([20, 10, 3, 1])
         .clamp(true);
 
-        const orbit = d3.orbit().size([windowWidth/2, windowHight/2])
+        const orbit = d3.orbit()
+        .mode('atomic')
+        .size([windowWidth/2, windowHight/2])
         .children(function(d) {return d.children})
         .revolution(function(d) {return d.depth})
         .orbitSize(function(d) {return orbitScale(d.depth-1)})

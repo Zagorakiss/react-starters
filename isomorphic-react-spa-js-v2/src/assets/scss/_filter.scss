@@ -9,22 +9,28 @@ $color__filter: $dark-gray;
 	position: absolute;
     top: 0;
 	left: 0;
+	min-height: 100vh;
+	height: 100%;
+	border-right: 1px solid $gray;
+	overflow: scroll;
+	transition: .5s;
 	&.is-closed {
 		// z-index: -1;
+		transform: translateX(-316px);
 	}
 
 	.filter {
 		// display: flex;
 		flex-direction: column;
 		width: $width__filter;
-		height: 100vh;
-		overflow: scroll;
+		min-height: 100vh;
+		// overflow: scroll;
 		background-color: $color__filter;
 		transition: .5s;
-		border-right: 1px solid $gray;
+		// border-right: 1px solid $gray;
 		
 		&.is-closed {
-			transform: translateX(-316px);
+			// transform: translateX(-316px);
 		}
 
 		// TOP ////////////////////////////////////////////////
@@ -174,6 +180,18 @@ $color__filter: $dark-gray;
 				color: rgba(96, 96, 96, 0.6);
 			}
 
+		}
+		&__label {
+			margin-bottom: 3px;
+			line-height: 1;
+			font-size: 12px;
+			font-weight: normal;
+			font-style: normal;
+			font-stretch: normal;
+			line-height: normal;
+			letter-spacing: 0.5px;
+			text-align: left;
+			color: transparentize($white, 0.2)
 		}
 		// BLOCKS END ////////////////////////////////////////////////
 	}

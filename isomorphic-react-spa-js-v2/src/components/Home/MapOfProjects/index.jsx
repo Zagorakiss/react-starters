@@ -65,12 +65,46 @@ class MapOfProjects extends React.PureComponent {
     }
 
     render () {
-        const {t, isAuth, isFetching} = this.props;
+        const {t, isAuth, isFetching, filteredData} = this.props;
+        const data = filteredData.length ? filteredData : projects;
         return (
             <div className="map-container">
 				<div className="map">
                     {this.renderTempBlock()}
-                    <Orbits />
+                    {/* <Orbits /> */}
+                    <div className="project-block">
+                        {`Projects amount: ${data.length}`}
+                    </div>
+                    {data.map((item, key) => {
+                        return (
+                            <div className="project-block" key={key}>
+                                <div className="project-block__param">
+                                    {item.name}
+                                </div>
+                                <div className="project-block__param">
+                                    {`key: ${item.key}`}
+                                </div>
+                                <div className="project-block__param">
+                                    {`marketcap: ${item.marketcap}`}
+                                </div>
+                                <div className="project-block__param">
+                                    {`industry: ${item.industry}`}
+                                </div>
+                                <div className="project-block__param">
+                                    {`price: ${item.price}`}
+                                </div>
+                                <div className="project-block__param">
+                                    {`consensusAlgorithm: ${item.consensusAlgorithm}`}
+                                </div>
+                                <div className="project-block__param">
+                                    {`year: ${item.year}`}
+                                </div>
+                                <div className="project-block__param">
+                                    {`stage: ${item.stage}`}
+                                </div>
+                            </div>
+                        )
+                    })}
 				</div>
             </div>
         )

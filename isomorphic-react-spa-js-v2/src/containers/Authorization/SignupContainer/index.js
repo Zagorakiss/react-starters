@@ -1,10 +1,9 @@
-import { connect } from 'react-redux'
-import { Signup } from '../../../components/Authorization/Signup'
-import { signup, emailRepeat, changeEmail } from '../../../redux/actions/session'
-import { openSuccess, openError } from '../../../redux/actions/systemMessages'
+import {connect} from 'react-redux'
+import Signup from '../../../components/Authorization/Signup'
+import {signup, emailRepeat, changeEmail} from '../../../redux/actions/session'
 
 const mapStateToProps = state => {
-  const { isAuth, userId, email, isEmailRepeated, isFetching } = state.session
+  const {isAuth, userId, email, isEmailRepeated, isFetching} = state.session
   return {
     isAuth,
     userId,
@@ -24,12 +23,6 @@ const mapDispatchToProps = (dispatch) => {
     },
     changeEmail: userData => {
       return dispatch(changeEmail(userData))
-    },
-    openSuccessMessage: text => {
-      return dispatch(openSuccess(text))
-    },
-    openErrorMessage: text => {
-      return dispatch(openError(text))
     }
   }
 }

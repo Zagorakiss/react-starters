@@ -1,0 +1,28 @@
+{
+  "home": {
+    "selectedParams": {
+      "stage": "Стадия",
+      "price": "Стоимость",
+      "years": "Года",
+      "consensusAlgorithm": "Алгоритм консенсуса",
+      "marketcap": "Капитализация",
+      "finance": "Финансы",
+      "technology": "Технологии",
+      "industry": "Индустрии"
+    },
+    "filter": {
+      "finance": "Финансы",
+      "technology": "Технологии",
+      "industry": "Индустрии",
+      "comoncap": "Общая Капитализация",
+      "marketcap": "Капитализация",
+      "stage": "Стадия",
+      "price": "Стоимость",
+      "years": "Года",
+      "consensusAlgorithm": "Алгоритм консенсуса"
+    },
+    "buttons": {
+      "filters": "Фильтры"
+    }
+  }
+}

@@ -29,7 +29,7 @@ module.exports = function() {
       fixedOrbitArray = [1]
     }
     if (_mode == "atomic") {
-      fixedOrbitArray = [2,8]
+      fixedOrbitArray = [2, 8]
     }
     if (_mode == "flat") {
       fixedOrbitArray = [99]

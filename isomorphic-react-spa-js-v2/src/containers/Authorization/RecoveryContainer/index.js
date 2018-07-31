@@ -1,9 +1,9 @@
-import { connect } from 'react-redux'
-import { Recovery } from '../../../components/Authorization/Recovery'
-import { recovery } from '../../../redux/actions/session'
+import {connect} from 'react-redux'
+import Recovery from '../../../components/Authorization/Recovery'
+import {recovery} from '../../../redux/actions/session'
 
 const mapStateToProps = state => {
-  const { isAuth, email, isFetching } = state.session
+  const {isAuth, email, isFetching} = state.session
   return {
     isAuth,
     email,

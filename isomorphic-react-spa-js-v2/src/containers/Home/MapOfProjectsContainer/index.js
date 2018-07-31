@@ -4,13 +4,15 @@ import {MapOfProjects} from 'components';
 
 const mapStateToProps = state => {
   const {isAuth, email, token, isFetching} = state.session;
+  const {filteredData} = state.filter;
   const {env} = state;
   return {
     isAuth,
     email,
     token,
     isFetching,
-    env
+    env,
+    filteredData
   }
 }
 

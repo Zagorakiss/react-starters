@@ -1,93 +1,94 @@
-// @flow
-import React, { Component } from 'react'
+import * as React from 'react';
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
-import { EmailSentContainer } from '../../../containers/Authorization/EmailSentContainer'
-import { Input } from '../../FormComponents/Input'
-import { Button } from '../../Buttons'
-import { Template } from '../Templates'
-import { FormTemplate } from '../Templates/FormTemplate'
-import { RecoveryIcon } from '../../Svg/RecoveryIcon'
-import { translate } from 'react-i18next'
+import {EmailSentContainer} from '../../../containers/Authorization/EmailSentContainer'
+import {Template} from '../Templates'
+import {FormTemplate} from '../Templates/FormTemplate'
+import {translate} from 'react-i18next'
 
-type Props = {
-  isAuth: boolean,
-  recovery: Function,
-  isFetching: boolean,
-  t: Function
-}
+class Recovery extends React.PureComponent {
 
-type State = {
-  isSent: boolean,
-  email: string
-}
-
-@translate('authorization')
-export class Recovery extends Component<Props, State> {
-  static propTypes = {
-    isAuth: PropTypes.bool.isRequired,
-    recovery: PropTypes.func.isRequired,
-    isFetching: PropTypes.bool.isRequired
-  }
-
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
     this.state = {
       isSent: false,
       email: ''
     }
   }
 
-  submitHandler = (event: SyntheticEvent<FormTemplate>) => {
+  submitHandler = (event) => {
     event.preventDefault()
     this.props.recovery(this.state.email)
       .then(() => this.setState({isSent: true}))
   }
 
-  takeInput = (field: { name: string, value: string }) => {
-    this.setState({[field.name]: field.value})
-  }
+  takeInput = (event) => {
+		this.setState({[event.target.name]: event.target.value});
+	}
+
+  // takeInput = (event) => {
+	// 	this.setState({[event.target.name]: event.target.value});
+	// }
 
   render () {
-    const { t } = this.props
+    const {t} = this.props;
     if (this.state.isSent) {
       return (
-        <EmailSentContainer
-          text={t('recovery.emailSent')}
-          email={this.state.email}
-          emailRepeat={() => this.props.recovery(this.state.email)}
-        />
-      )
-    } else {
-      return (
-        <Template
-          heading={t('recovery.heading')}
-          icon={<RecoveryIcon />}
-        >
-          <Text>
-            {t('recovery.text')}
-          </Text>
-          <FormTemplate onSubmit={this.submitHandler}>
-            <InputContainer>
-              <Input
-                name='email'
-                type='email'
-                label='Email'
-                takeValue={this.takeInput}
-                required
-              />
-            </InputContainer>
-            <Button 
-              type='submit'
-              disabled={this.props.isFetching}>
-              {t('recovery.submit')}
-            </Button>
-          </FormTemplate>
-        </Template>
+        <div className="login-container">
+          <div className="login login_confirm">
+            <EmailSentContainer
+              text={t('recovery.emailSent')}
+              email={this.state.email}
+              emailRepeat={() => this.props.recovery(this.state.email)}
+            />
+          </div>
+        </div>
       )
     }
+    return (
+        <div className="login-container">
+          <div className="login login_recovery">
+            <div className="login__title">{t('recovery.heading')}</div>
+            <Text>
+              {t('recovery.text')}
+            </Text>
+            <form
+              onSubmit={this.submitHandler}
+              className={`login__form`}
+            >
+              <InputContainer>
+                <input
+                  name="email"
+                  type="email"
+                  label="Email"
+                  onChange={this.takeInput}
+                  required
+                  className="login__field"
+                />
+              </InputContainer>
+              <div className="login__btn-group">
+                <button
+                  type="submit"
+                  disabled={this.props.isFetching}
+                  className="button login__btn login__btn_auto"
+                >
+                  {t('recovery.submit')}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )
   }
 }
+
+Recovery.propTypes = {
+  isAuth: PropTypes.bool.isRequired,
+  recovery: PropTypes.func.isRequired,
+  isFetching: PropTypes.bool.isRequired
+}
+
+export default translate('authorization')(Recovery);
 
 const Text = styled.p`
 margin: 0;
