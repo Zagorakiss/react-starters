@@ -3,12 +3,18 @@ import {Profile} from 'components';
 import {logout} from '../../redux/actions/session';
 
 const mapStateToProps = state => {
-  const {isAuth, email, token, isFetching} = state.session;
+  const {isAuth, token, isFetching} = state.session;
+  const {email, favorites} = state.profile.list;
+  const isProfileFetching = state.profile.isFetching;
+  const {dataLoaded} = state.profile;
   return {
     isAuth,
-    email,
     token,
-    isFetching
+    isFetching,
+    email,
+    favorites,
+    isProfileFetching,
+    dataLoaded
   }
 }
 

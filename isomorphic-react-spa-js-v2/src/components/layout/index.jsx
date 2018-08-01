@@ -5,11 +5,15 @@ import {setDeviceDetails} from '../../redux/actions/env';
 import {login, logout} from '../../redux/actions/session';
 // import * as _ from 'lodash';
 import {HeaderContainer} from '../../containers/HeaderContainer';
+import {NotificationContainer} from 'react-notifications';
+import {createNotification} from 'utils';
+import {getProfile} from '../../redux/actions/profile';
 
 const mapStateToProps = state => {
     return {
         isAuth: state.session.isAuth,
-        token: state.session.token
+        token: state.session.token,
+        profileData: state.profile.list
     }
   }
 
@@ -22,6 +26,9 @@ const mapDispatchToProps = dispatch => {
         login: (token) => {
             return dispatch(login(token))
         },
+        getProfile: () => {
+            return dispatch(getProfile())
+        }
     };
 };
 
@@ -62,18 +69,20 @@ class Layout extends React.PureComponent {
         }
     }
 
-    // componentWillReceiveProps (nextProps) {
-    //     if ((nextProps.isAuth === true) && (nextProps.isAuth !== this.props.isAuth )) {
-    //         this.props.getProfile()
-    //             .then(() => {
-    //                 const langInProfile = this.props.profileData.language.toLowerCase()
-    //                 if (langInProfile !== i18next.language) {
-    //                     i18next.changeLanguage(langInProfile)
-    //                 }
-    //             })
-    //         // this.getInfo()
-    //     }
-    // }
+    componentWillReceiveProps (nextProps) {
+        if ((nextProps.isAuth === true) && (nextProps.isAuth !== this.props.isAuth )) {
+            this.props.getProfile()
+                .then(() => createNotification('success', 'Profile loaded', 'Success'))
+                .catch(() => createNotification('error', 'Profile loading error', 'Error'))
+                // .then(() => {
+                //     const langInProfile = this.props.profileData.language.toLowerCase()
+                //     if (langInProfile !== i18next.language) {
+                //         i18next.changeLanguage(langInProfile)
+                //     }
+                // })
+            // this.getInfo()
+        }
+    }
 
     render() {
         const {route, isAuth} = this.props;
@@ -103,6 +112,7 @@ class Layout extends React.PureComponent {
                     {/* {commonRoutes}
                     {isAuth ? protectedRoutes : guestRoutes} */}
                 </div>
+                <NotificationContainer />
             </div>
         );
     }

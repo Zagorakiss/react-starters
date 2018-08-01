@@ -39,7 +39,7 @@ function assets() {
         const assets = JSON.parse(fs.readFileSync(path.join(__dirname, 'assets.json'), 'utf8'));
         const clientSide = resolve(assets, ['app.js']);
         return clientSide.map((src, item) => {
-            return <script src={src} key={item}/>;
+            return <script async src={src} key={item}/>;
         });
     }
 }
@@ -122,6 +122,7 @@ app.get('*', (req, res) => {
             <body>
                 <div id="app" dangerouslySetInnerHTML={{__html: reactAppElement}}/>
                 <script
+                    async
                     dangerouslySetInnerHTML={{__html: `window.__REDUX_STATE__=${serialize(store.getState())}`}}
                     charSet="UTF-8"
                 />

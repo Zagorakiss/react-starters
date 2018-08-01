@@ -25,7 +25,7 @@ class EmailSent extends React.PureComponent {
         })
       createNotification('success', this.props.t('emailSent.emailRepeated'), 'Success')
     } else {
-      createNotification('success', this.props.t('emailSent.emailRepeatedError'), 'Success')
+      createNotification('error', this.props.t('emailSent.emailRepeatedError'), 'Error')
     }
   }
 

@@ -204,4 +204,30 @@
         width: 100px;
         height: 27px;
     }
+    &_profile {
+        // width: 261px;
+        // height: 60px;
+        padding: 10px 20px;
+        background-color: transparent;
+        border: solid 2px $green;
+        font-size: 20px;
+        font-weight: 300;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: 1px;
+        text-align: center;
+        color: $green;
+        border-radius: 0px;
+        &:hover {
+            background-color: $green;
+            border: solid 2px $green;
+            color: $white;
+        }
+        &:active {
+            background-color: $dark-green;
+            border: solid 1px $dark-green;
+            color: $white;
+        }
+    }
 }

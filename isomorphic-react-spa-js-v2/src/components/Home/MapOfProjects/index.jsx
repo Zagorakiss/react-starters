@@ -40,28 +40,28 @@ class MapOfProjects extends React.PureComponent {
 
     renderTempBlock = () => {
         const {t, isAuth, isFetching} = this.props;
-        // return (
-        //     <div className="tempBlock">
-        //         <h1>MapOfProjects Component</h1>
-        //         <h2>{`isAuth: ${isAuth}`}</h2>
-        //         {t('login.heading')}
-        //         <button
-        //             onClick={() => i18n.changeLanguage('ru')}
-        //         >
-        //             Сменить язык на русский
-        //         </button>
-        //         <button
-        //             onClick={() => i18n.changeLanguage('en')}
-        //         >
-        //             Сменить язык на английский
-        //         </button>
-        //         <span className="icon-user" />
-        //         {/* <FilteredList items={projectsList} predicate={item => item.year}>
-        //             {item => <div key={item.key}>{item.name}</div>}
-        //         </FilteredList> */}
-        //     </div>
-        // )
-        return null
+        return (
+            <div className="tempBlock">
+                <h1>MapOfProjects Component</h1>
+                <h2>{`isAuth: ${isAuth}`}</h2>
+                {t('login.heading')}
+                <button
+                    onClick={() => i18n.changeLanguage('ru')}
+                >
+                    Сменить язык на русский
+                </button>
+                <button
+                    onClick={() => i18n.changeLanguage('en')}
+                >
+                    Сменить язык на английский
+                </button>
+                <span className="icon-user" />
+                {/* <FilteredList items={projectsList} predicate={item => item.year}>
+                    {item => <div key={item.key}>{item.name}</div>}
+                </FilteredList> */}
+            </div>
+        )
+        // return null
     }
 
     render () {
@@ -70,7 +70,7 @@ class MapOfProjects extends React.PureComponent {
         return (
             <div className="map-container">
 				<div className="map">
-                    {this.renderTempBlock()}
+                    {/* {this.renderTempBlock()} */}
                     {/* <Orbits /> */}
                     <div className="project-block">
                         {`Projects amount: ${data.length}`}

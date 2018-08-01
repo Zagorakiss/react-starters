@@ -4,6 +4,7 @@ import {translate} from 'react-i18next';
 import i18n from 'config/i18n';
 import MenuItem from './menu-item';
 import {Link} from 'react-router-dom';
+import LangSwitcher from '../LangSwitcher';
 
 class Header extends React.PureComponent {
 
@@ -15,6 +16,7 @@ class Header extends React.PureComponent {
     }
 
     // componentWillMount() {
+	// 	console.log(localStorage);
 	// }
 
 	toggleSearch = () => {
@@ -38,9 +40,10 @@ class Header extends React.PureComponent {
 				<div className="menu">
 					<ul className={`menu__list`}>
 						<MenuItem>
-							<button onClick={this.toggleLangDropdown} className="menu__link menu__link_lang">
+							{/* <button onClick={this.toggleLangDropdown} className="menu__link menu__link_lang">
 								{`EN`}
-							</button>
+							</button> */}
+							<LangSwitcher />
 						</MenuItem>
 						<MenuItem authRequired={false} isAuth={isAuth}>
 							<button onClick={this.toggleSearch} className="menu__link menu__link_search">
@@ -60,9 +63,6 @@ class Header extends React.PureComponent {
 						</MenuItem> */}
 					</ul>
 				</div>
-				{/* <div className="header__control">
-					{this.langDropdown()}
-				</div> */}
 			</header>
         )
     }
