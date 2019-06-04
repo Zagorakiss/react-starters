@@ -1,0 +1,11 @@
+{
+  "logs": {
+    "heading": "Логи",
+    "loadMore": "Загрузить еще",
+    "logsItems": {
+      "datetime": "Дата и время",
+      "ip": "IP",
+      "browser": "Браузер"
+    }
+  }
+}

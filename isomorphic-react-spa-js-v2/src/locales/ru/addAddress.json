@@ -1,0 +1,9 @@
+{
+  "addAddress": {
+    "SelectWalletLabel": "Кошелек",
+    "heading": "Сохранение адреса",
+    "addressInputLabel": "Адрес получателя",
+    "nameInputLabel": "Название",
+    "submit": "Сохранить"
+  }
+}

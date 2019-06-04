@@ -1,0 +1,18 @@
+{
+  "accountSettings": {
+    "tabs": {
+      "addresses": "Saved payment addresses",
+      "notifications": "Notifications settings"
+    },
+    "addressBook": {
+      "heading": "Saved addresses",
+      "add": "Add address"
+    },
+    "notifications": {
+      "heading": "Notifications settings",
+      "transaction": "Payment sent",
+      "system": "System notifications",
+      "signin": "Successful login"
+    }
+  }
+}

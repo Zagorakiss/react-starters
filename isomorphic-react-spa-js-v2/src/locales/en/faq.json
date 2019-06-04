@@ -1,0 +1,14 @@
+{
+  "faq": {
+    "bcwallet": "What is bcwallet.io",
+    "howItWorks": "How does a wallet works?",
+    "signup": "How to register?",
+    "id": "Is it necessary to pass a personal  identification?",
+    "open": "How to open a crypto account?",
+    "differentCurrencies": "Is it possible to open accounts in different currencies?",
+    "supportedCurrencies": "What cryptocurrencies does your wallet support?",
+    "price": "How much does it cost to open an account?",
+    "recovery": "What if I forgot my password?",
+    "minValue": "Is there a minimum payment amount (receive, send)?"
+  }
+}

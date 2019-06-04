@@ -1,0 +1,9 @@
+{
+  "addAddress": {
+    "SelectWalletLabel": "Wallet",
+    "heading": "Adding address",
+    "addressInputLabel": "Receiver address",
+    "nameInputLabel": "Name",
+    "submit": "Save"
+  }
+}
