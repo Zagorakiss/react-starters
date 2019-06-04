@@ -2,44 +2,37 @@
 
 Works stable on Node.js v7.2.0
 
-# Installing
-Clone the project
+
+# Installing and launching
+#### Clone the project
 ```sh
 git clone {REPO_NAME}
 ```
 
-Install dependencies
-```sh
+#### Install dependencies
+```jsx
 npm install
-```
-or
-```sh
+// or
 yarn
 ```
 
-Launching in dev mode with hot reload
-```sh
+#### Launch in dev mode with hot reload
+```jsx
 npm run start
-```
-or
-```sh
+// or
 yarn start
 ```
 
-Launching in production mode
-```sh
+#### Launch in production mode
+```jsx
 npm run start:prod
-```
-or
-```sh
+// or
 yarn start:prod
 ```
 
-Analyze code for potential errors
-```
+#### Analyze code for potential errors
+```jsx
 npm run lint
-```
-or
-```
+// or
 yarn lint
 ```
