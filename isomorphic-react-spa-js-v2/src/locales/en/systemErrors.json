@@ -1,8 +1,0 @@
-{
-  "systemErrors": {
-    "WrongUsernamePassword": "Wrong username or password",
-    "ServiceUnavailable": "Service temporary unavailable",
-    "InternalServerError": "Server error. Try again after a while.",
-    "userWithSuchNameAlreadyExists": "User with such email already exists"
-  }
-}

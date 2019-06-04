@@ -28,16 +28,19 @@
     },
     "login": {
       "heading": "Log in",
+      "email": "Email address",
       "recovery": "Recover password",
       "login": "Log in",
       "passwordLabel": "Password",
       "unknownError": "Unknown error occurred",
       "WrongUsernamePassword": "Wrong Username or Password",
-      "connectionFailed": "Connection Failed"
+      "connectionFailed": "Connection Failed",
+      "forgotPass": "Forgot your password ?",
+      "createAccount": "Create an account"
     },
     "emailConfirmed": {
-      "heading": "Your email confirmed",
-      "text": "Log in to start using your wallet!",
+      "heading": "Your email is confirmed",
+      "text": "Use confirmed email to log in",
       "button": "Log in"
     },
     "emailSent": {

@@ -93,6 +93,10 @@ html, body, #app, #layout {
     font-family: $rob, Roboto, system-ui;
 }
 
+#layout {
+    padding-top: 77px;
+}
+
 html, body {
     margin: 0;;
     padding: 0;
@@ -102,7 +106,7 @@ html, body {
 #routes {
     min-height: 100%;
     height: auto;
-    overflow: hidden;
+    // overflow: hidden;
 }
 
 

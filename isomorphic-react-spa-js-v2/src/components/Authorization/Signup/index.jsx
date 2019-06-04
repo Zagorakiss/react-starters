@@ -37,7 +37,7 @@ class Signup extends React.PureComponent {
     return (
       <div className="login-container">
         <div className="login login_signup">
-          <div className="login__title">Sign up</div>
+          <div className="login__title">{t('registration.heading')}</div>
             <Form
               signup={this.props.signup}
               openErrorMessage={this.props.openErrorMessage}

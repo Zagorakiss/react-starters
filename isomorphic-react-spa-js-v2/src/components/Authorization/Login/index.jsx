@@ -122,7 +122,7 @@ class Login extends React.PureComponent {
 				<div className="row">
 					<div className="login-container">
 						<div className="login">
-							<div className="login__title">Login</div>
+							<div className="login__title">{t('login.heading')}</div>
 							<form onSubmit={this.handleSubmit}
 								className={`login__form ${this.props.error === '401' || this.props.error === '404' || this.props.error === '400' || this.props.error === '500' ? ' login__form_error' : ''}`}>
 								<div className="login__field-group">
@@ -132,7 +132,7 @@ class Login extends React.PureComponent {
 											onChange={this.handleInputChange}
 											type="email"
 											name="email"
-											placeholder="Username or email address"
+											placeholder={t('login.email')}
 											className="login__field"
 										/>
 									</div>
@@ -142,7 +142,7 @@ class Login extends React.PureComponent {
 											onChange={this.handleInputChange}
 											type="password"
 											name="password"
-											placeholder="Password"
+											placeholder={t('login.passwordLabel')}
 											className="login__field"
 										/>
 									</div>
@@ -156,19 +156,19 @@ class Login extends React.PureComponent {
 										disabled={isFetching}
 										className="button login__btn"
 									>
-										{`Login`}
+										{t('login.login')}
 									</button>
 									<Link
 										to="/recovery"
 										className="login__link"
 									>
-										{`Forgot your password ?`}
+										{t('login.forgotPass')}
 									</Link>
 									<Link
 										to="/signup"
 										className="button login__btn login__btn_big"
 									>
-										{`Create an account`}
+										{t('login.createAccount')}
 									</Link>
 								</div>
 							</form>

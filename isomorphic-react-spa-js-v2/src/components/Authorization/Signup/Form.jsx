@@ -104,7 +104,7 @@ class Form extends React.PureComponent {
                 required
                 label={t('registration.form.passwordLabelFirst')}
                 pattern="[a-zA-Z0-9].{9,}"
-                placeholder="Password"
+                placeholder={t('registration.form.passwordLabelFirst')}
                 className="login__field"
               />
             </div>
@@ -118,7 +118,7 @@ class Form extends React.PureComponent {
                 type="password"
                 onChange={this.takeInput}
                 required
-                placeholder="Repeat password"
+                placeholder={t('registration.form.passwordLabelSecond')}
                 label={t('registration.form.passwordLabelSecond')}
                 pattern="[a-zA-Z0-9].{9,}"
                 className="login__field"

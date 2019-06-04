@@ -1,33 +1,22 @@
 {
   "profile": {
-    "authTypesHeading": "Тип аутентификации",
-    "tfaCheckboxesList": {
-      "signin": "Запрашивать при входе",
-      "send": "Запрашивать при оплате/переводе"
+    "header": {
+      "logoutBtn": "Выйти",
+      "since": "на сайте с"
     },
-    "langSelectLabel": "Язык интерфейса",
-    "tfaSwitch": "Двухфакторная аутентификация",
-    "passwordSwitch": "Платежный пароль",
-    "emailLabel": "Ваш E-mail",
-    "changePassword": "Сменить пароль",
-    "profileHeader": {
-      "heading": "Профиль",
-      "buttonLogs": "Открыть логи",
-      "buttonHelp": "Поддержка"
+    "tabs": {
+      "favorites": "Избранное",
+      "others": "Другое"
     },
-    "newPassword": {
-      "heading": "Изменение пароля",
-      "oldPasswordPlaceholder": "Старый пароль",
-      "oldPasswordLabel": "Введите старый пароль",
-      "newPasswordPlaceholder": "Новый пароль",
-      "newPasswordFirstLabel": "Введите новый пароль",
-      "newPasswordSecondLabel": "Повторите новый пароль",
-      "buttonText": "Изменить пароль",
-      "error": "Произошла ошибка при смене пароля",
-      "dontMatch": "Пароли не совпадают",
-      "samePassword": "Новый пароль должен отличаться от старого",
-      "success": "Пароль успешно изменен"
-    },
-    "tfaError": "Произошла неизвестная ошибка"
+    "cards": {
+      "delete": "Удалить",
+      "description": "Описание",
+      "marketcap": "Капитализация",
+      "consensusAlgorithm": "Алгоритм консенсуса",
+      "industry": "Индустрия",
+      "year": "Год",
+      "stage": "Стадия",
+      "website": "Сайт"
+    }
   }
 }

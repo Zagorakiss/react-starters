@@ -3,8 +3,8 @@ import * as FilterActionTypes from '../actionTypes/filter';
 const initialState = {
   isFetching: false,
   error: '',
-  rawData: [],
-  filteredData: []
+  rawData: {},
+  filteredData: {}
 }
 
 const setFilteredData = (state, action) => {

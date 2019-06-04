@@ -5,24 +5,43 @@
       "price": "Price",
       "years": "Years",
       "consensusAlgorithm": "Consensus Algorithm",
-      "marketcap": "Капитализация",
+      "marketcap": "MarketCap",
       "finance": "Finance",
       "technology": "Technology",
-      "industry": "Industries"
+      "industry": "Industries",
+      "title": "Selected filters",
+      "min": "from",
+      "max": "to"
     },
     "filter": {
       "finance": "Finance",
       "technology": "Technology",
       "industry": "Industries",
-      "comoncap": "Comon capitalization",
+      "commoncap": "Comon capitalization",
       "marketcap": "Capitalization",
       "stage": "Stage",
       "price": "Price",
       "years": "Years",
-      "consensusAlgorithm": "Consensus Algorithm"
+      "consensusAlgorithm": "Consensus Algorithm",
+      "projectsAmount": "projects",
+      "min": "min",
+      "max": "max"
     },
     "buttons": {
-      "filters": "Filters"
+      "filters": "Filters",
+      "apply": "Apply",
+      "reset": "Reset"
+    },
+    "popup": {
+      "price": "Price",
+      "cap": "MarketCap",
+      "info": "About project",
+      "relatedProjects": "Related projects",
+      "partnerProjects": "Projects-partners",
+      "socialActivity": "Social activity"
+    },
+    "colorBar": {
+      "title": "MarketCap"
     }
   }
 }

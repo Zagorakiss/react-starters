@@ -8,6 +8,7 @@ import {HeaderContainer} from '../../containers/HeaderContainer';
 import {NotificationContainer} from 'react-notifications';
 import {createNotification} from 'utils';
 import {getProfile} from '../../redux/actions/profile';
+import i18n from 'config/i18n';
 
 const mapStateToProps = state => {
     return {
@@ -56,16 +57,25 @@ class Layout extends React.PureComponent {
     }
 
     componentDidMount() {
-        const token = JSON.parse(localStorage.getItem('token'));
-        if (token) {
-            this.props.login({refresh_token: token.refresh_token})
-                .then(() => console.log('login after refresh'))
-                .catch(error => {
-                    if (error.text) {
-                        this.props.logout()
-                            // .then(() => this.setState({ loginOnMount: false }))
-                    }
-                })
+        if (process.browser) {
+            // Login after refresh
+            const token = JSON.parse(localStorage.getItem('token'));
+            if (token) {
+                this.props.login({refresh_token: token.refresh_token})
+                    .then(() => console.log('login after refresh'))
+                    .catch(error => {
+                        if (error.text) {
+                            this.props.logout()
+                                // .then(() => this.setState({ loginOnMount: false }))
+                        }
+                    })
+            }
+            // Fix for i18n
+            const lng = localStorage.getItem('i18nextLng');
+            if (lng !== 'en' && lng !== 'ru') {
+                // localStorage.setItem('i18nextLng', 'en');
+                i18n.changeLanguage('en');
+            }
         }
     }
 

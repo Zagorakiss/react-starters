@@ -58,6 +58,7 @@ class Form extends React.PureComponent {
               type="password"
               onChange={this.takeInput}
               label={t('newPassword.firstInputLabel')}
+              placeholder={t('newPassword.firstInputLabel')}
               pattern="[a-zA-Z0-9].{9,}"
               required
               className="login__field"
@@ -69,6 +70,7 @@ class Form extends React.PureComponent {
               type="password"
               onChange={this.takeInput}
               label={t('newPassword.secondInputLabel')}
+              placeholder={t('newPassword.secondInputLabel')}
               pattern="[a-zA-Z0-9].{9,}"
               required
               className="login__field"

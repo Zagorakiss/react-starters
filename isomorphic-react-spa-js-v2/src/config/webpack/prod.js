@@ -60,10 +60,7 @@ let config = {
                 test: /\.jsx?$/,
                 exclude: /(node_modules|bower_components)/,
                 use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env', 'babel-plugin-transform-react-jsx']
-                    }
+                    loader: 'babel-loader'
                 }
             },
             {

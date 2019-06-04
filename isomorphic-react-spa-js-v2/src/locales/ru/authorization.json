@@ -28,16 +28,19 @@
     },
     "login": {
       "heading": "Авторизация",
+      "email": "Email адрес",
       "recovery": "Восстановление пароля",
       "login": "Войти",
       "passwordLabel": "Пароль",
       "unknownError": "Произошла неизвестная ошибка",
       "WrongUsernamePassword": "Неправильный логин или пароль",
-      "connectionFailed": "Не удалось соединиться с сервером"
+      "connectionFailed": "Не удалось соединиться с сервером",
+      "forgotPass": "Забыли пароль ?",
+      "createAccount": "Создать аккаунт"
     },
     "emailConfirmed": {
-      "heading": "Ваш e-mail был подтвержден",
-      "text": "Авторизируйтесь, чтобы начать пользоваться кошельком!",
+      "heading": "Ваш e-mail подтвержден",
+      "text": "Используйте подтверждённый e-mail, чтобы авторизоваться",
       "button": "Войти"
     },
     "emailSent": {

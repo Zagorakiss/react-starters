@@ -1,33 +1,22 @@
 {
   "profile": {
-    "authTypesHeading": "Authentication type",
-    "tfaCheckboxesList": {
-      "signin": "Ask on login",
-      "send": "Ask on send"
+    "header": {
+      "logoutBtn": "Logout",
+      "since": "user since"
     },
-    "langSelectLabel": "Interface language",
-    "tfaSwitch": "Two-factor authentication",
-    "passwordSwitch": "Payment password",
-    "emailLabel": "Your E-mail",
-    "changePassword": "Change password",
-    "profileHeader": {
-      "heading": "Profile",
-      "buttonLogs": "Open Logs",
-      "buttonHelp": "Support"
+    "tabs": {
+      "favorites": "Favorites",
+      "others": "Others"
     },
-    "newPassword": {
-      "heading": "Change password",
-      "oldPasswordPlaceholder": "Old password",
-      "oldPasswordLabel": "Enter old password",
-      "newPasswordPlaceholder": "New password",
-      "newPasswordFirstLabel": "Enter new password",
-      "newPasswordSecondLabel": "Repeat new password",
-      "buttonText": "Change password",
-      "error": "Error occured while creating new password",
-      "dontMatch": "Password don't match",
-      "samePassword": "New password should be different from the old",
-      "success": "Password successfully changed"
-    },
-    "tfaError": "Unknown error occurred"
+    "cards": {
+      "delete": "Delete",
+      "description": "Description",
+      "marketcap": "MarketCap",
+      "consensusAlgorithm": "Consensus algorithm",
+      "industry": "Industry",
+      "year": "Year",
+      "stage": "Stage",
+      "website": "Website"
+    }
   }
 }

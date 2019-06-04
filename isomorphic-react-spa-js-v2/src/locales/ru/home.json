@@ -8,21 +8,40 @@
       "marketcap": "Капитализация",
       "finance": "Финансы",
       "technology": "Технологии",
-      "industry": "Индустрии"
+      "industry": "Индустрии",
+      "title": "Выбраны фильтры",
+      "min": "от",
+      "max": "до"
     },
     "filter": {
       "finance": "Финансы",
       "technology": "Технологии",
       "industry": "Индустрии",
-      "comoncap": "Общая Капитализация",
+      "commoncap": "Общая Капитализация",
       "marketcap": "Капитализация",
       "stage": "Стадия",
       "price": "Стоимость",
       "years": "Года",
-      "consensusAlgorithm": "Алгоритм консенсуса"
+      "consensusAlgorithm": "Алгоритм консенсуса",
+      "projectsAmount": "проектов",
+      "min": "от",
+      "max": "до"
     },
     "buttons": {
-      "filters": "Фильтры"
+      "filters": "Фильтры",
+      "apply": "Применить",
+      "reset": "Сбросить"
+    },
+    "popup": {
+      "price": "Курс",
+      "cap": "Капитализация",
+      "info": "Информация о проекте",
+      "relatedProjects": "Связанные проекты",
+      "partnerProjects": "Проекты-партнёры",
+      "socialActivity": "Проект в социальных сетях"
+    },
+    "colorBar": {
+      "title": "Капитализация"
     }
   }
 }

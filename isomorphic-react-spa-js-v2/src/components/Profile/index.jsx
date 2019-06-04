@@ -2,6 +2,7 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import {translate} from 'react-i18next';
 import i18n from '../../config/i18n';
+import numeral from 'numeral';
 
 class Profile extends React.PureComponent {
 
@@ -24,7 +25,7 @@ class Profile extends React.PureComponent {
 			})
 	}
 
-	renderFavorites = () => {
+	renderFavoritesDos = () => {
 		const {favorites} = this.props;
 		return (
 			<div className="favorites">
@@ -66,18 +67,100 @@ class Profile extends React.PureComponent {
 	}
 
 	renderLogoutButton = () => {
+		const {t} = this.props;
 		return (
 			<button
 				className="button button_profile"
 				onClick={this.logout}
 			>
-				{`Logout`}
+				{t('header.logoutBtn')}
 			</button>
 		)
 	}
 
+	renderFavorites = () => {
+		const {t, favorites} = this.props;
+		return (
+			<div className="favorites">
+				{favorites.map((item, key) => {
+					return (
+						<div className="card" key={key}>
+							<div className="card__image">
+								<a href="#" type="button" className="card__image__btn">
+									<img src={item.logo} alt="user-image" />
+								</a>
+							</div>
+							<div className="card__modal">Take a look!</div>
+							<div className="card__info">
+								<div className="card__info__header">
+									<div className="card__info__name">
+										{`${item.name} [${item.key}]`}
+									</div>
+									<div className="card__info__price">
+										{/* {`$${item.price}`} */}
+										{numeral(item.price).format('$0,0.00')}
+									</div>
+									<div className={`card__info__price_change ${item.price_change.trend}`}>
+										<div className="trend">
+											<span className="trend__icon icon-arrow-up" />
+										</div>
+										<div className="percents">
+											{numeral(item.price_change.percents).format('0.00')}%
+										</div>
+										<div className="usd">
+											{item.price_change.trend === 'up' ? '+' : '-'}{numeral(item.price_change.usd).format('$0.00')}
+										</div>
+									</div>
+								</div>
+								<div className="card__info__social-networks">
+									<a href="#" className="card__info__social-networks__icon twitter">
+										<i className="fa fa-twitter" />
+									</a>
+									<a href="#" className="card__info__social-networks__icon facebook">
+										<i className="fa fa-facebook" />
+									</a>
+								</div>
+								<hr />
+								<div className="card__info__content">
+									<p>
+										<b>{`${t('cards.description')}: `}</b>
+										{item.description}
+									</p>
+									<p>
+										<b>{`${t('cards.marketcap')}: `}</b>
+										{`$${item.marketcap}`}
+									</p>
+									<p>
+										<b>{`${t('cards.consensusAlgorithm')}: `}</b>
+										{item.consensusAlgorithm}
+									</p>
+									<p>
+										<b>{`${t('cards.industry')}: `}</b>
+										{item.industry}
+									</p>
+									<p>
+										<b>{`${t('cards.year')}: `}</b>
+										{item.year}
+									</p>
+									<p>
+										<b>{`${t('cards.stage')}: `}</b>
+										{item.stage}
+									</p>
+									<p>
+										<b>{`${t('cards.website')}: `}</b>
+										<a className="card__link" href={item.site}>{item.site}</a>
+									</p>
+								</div>
+							</div>
+						</div>
+					)
+				})}
+			</div>
+		)
+	}
+
     render () {
-        const {t, isAuth, token, logout, isFetching, isProfileFetching, dataLoaded, email, favorites} = this.props;
+        const {t, isAuth, token, logout, isFetching, isProfileFetching, dataLoaded, email, registrationDate, favorites} = this.props;
         return (
 			<div className="profile-container">
 				<div className="profile">
@@ -85,14 +168,14 @@ class Profile extends React.PureComponent {
 						<div className="user">
 							<div className="user__left">
 								<div className="user__image">
-									<span class="user__icon icon-profile2" />
+									<span className="user__icon icon-profile2" />
 								</div>
 								<div className="user__info">
 									<div className="user__email">
 										{email}
 									</div>
 									<div className="user__date">
-										на сайте с 29 июня 2018 г.
+										{`${t('header.since')} ${registrationDate}`}
 									</div>
 								</div>
 							</div>
@@ -106,10 +189,10 @@ class Profile extends React.PureComponent {
 							<div className="tabs">
 								<div className="tabs__list">
 									<div className="tabs__item tabs__item_active">
-										Favorites
+										{t('tabs.favorites')}
 									</div>
 									<div className="tabs__item">
-										Other
+										{t('tabs.others')}
 									</div>
 								</div>
 							</div>
@@ -135,4 +218,4 @@ Profile.propTypes = {
 	isFetching: PropTypes.bool.isRequired
 };
 
-export default translate('authorization')(Profile);
+export default translate('profile')(Profile);

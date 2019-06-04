@@ -11,28 +11,36 @@ class Filter extends React.PureComponent {
             filter: {
                 industries: [
                     {
-                        name: 'Общая Капитализация',
+                        name: {
+                            en: 'Total Marketcap',
+                            ru: 'Общая Капитализация'
+                        },
                         key: '',
-                        amount: 1234,
-                        active: true
+                        amount: 1234
                     },
                     {
-                        name: 'Финансы',
+                        name: {
+                            en: 'Finance',
+                            ru: 'Финансы'
+                        },
                         key: 'finance',
-                        amount: 123,
-                        active: false
+                        amount: 123
                     },
                     {
-                        name: 'Технологии',
+                        name: {
+                            en: 'Technology',
+                            ru: 'Технологии'
+                        },
                         key: 'technology',
-                        amount: 123,
-                        active: false
+                        amount: 123
                     },
                     {
-                        name: 'Индустрии',
+                        name: {
+                            en: 'Industry',
+                            ru: 'Индустрии'
+                        },
                         key: 'industry',
-                        amount: 123,
-                        active: false
+                        amount: 123
                     }
                 ]
             }
@@ -108,6 +116,17 @@ class Filter extends React.PureComponent {
         );
     }
 
+    renderFilterBlockTitle = (item) => {
+        if (process.browser) {
+            return (
+                localStorage.getItem('i18nextLng') === 'ru' ? item.name.ru : item.name.en
+            );
+        }
+        return (
+            item.name.en
+        );
+    }
+
     render () {
         const {t, isAuth, email, isFetching} = this.props;
         const {filter, data, toggleFilter, setParam} = this.props;
@@ -118,7 +137,9 @@ class Filter extends React.PureComponent {
                     <div className="filter__top">
                         <div className="filter__title">
                             <span className="filter__title__icon icon-filter-custom" />
-                            <span className="filter__title__text">Фильтры</span>
+                            <span className="filter__title__text">
+                                {t('buttons.filters')}
+                            </span>
                         </div>
                         <button
                             className="filter__toggle"
@@ -135,8 +156,12 @@ class Filter extends React.PureComponent {
                                     onClick={() => setParam('industry', 'value', item.key)}
                                     key={key}
                                 >
-                                    <div className="filter__block__title">{item.name}</div>
-                                    <div className="filter__block__subtitle">{`[${item.amount} проекта]`}</div>
+                                    <div className="filter__block__title">
+                                        {this.renderFilterBlockTitle(item)}
+                                    </div>
+                                    <div className="filter__block__subtitle">
+                                        {`[${item.amount} ${t('filter.projectsAmount')}]`}
+                                    </div>
                                     <span className="filter__block__arrow icon-arrow-filter" />
                                 </div>
                             )
@@ -144,16 +169,16 @@ class Filter extends React.PureComponent {
                     </div>
                     <div className="filter__block-container">
                         <div className="filter__block">
-                            <div className="filter__block__title">Капитализация</div>
+                            <div className="filter__block__title">{t('filter.marketcap')}</div>
                             <div className="filter__block__content filter__block__content_fields">
-                                {this.renderField('marketcap', 'min', '123', 'от')}
-                                {this.renderField('marketcap', 'max', '123456', 'до')}
+                                {this.renderField('marketcap', 'min', '123', t('filter.min'))}
+                                {this.renderField('marketcap', 'max', '123456', t('filter.max'))}
                             </div>
                         </div>
                     </div>
                     <div className="filter__block-container">
                         <div className="filter__block">
-                            <div className="filter__block__title">Стадия</div>
+                            <div className="filter__block__title">{t('filter.stage')}</div>
                             <div className="filter__block__content">
                                 {this.renderCheckbox('stage', 'preIco', 'pre-ICO')}
                                 {this.renderCheckbox('stage', 'ico', 'ICO')}
@@ -163,25 +188,25 @@ class Filter extends React.PureComponent {
                     </div>
                     <div className="filter__block-container">
                         <div className="filter__block">
-                            <div className="filter__block__title">Стоимость</div>
+                            <div className="filter__block__title">{t('filter.price')}</div>
                             <div className="filter__block__content filter__block__content_fields">
-                                {this.renderField('price', 'min', '123', 'от')}
-                                {this.renderField('price', 'max', '12345678', 'до')}
+                                {this.renderField('price', 'min', '123', t('filter.min'))}
+                                {this.renderField('price', 'max', '12345678', t('filter.max'))}
                             </div>
                         </div>
                     </div>
                     <div className="filter__block-container">
                         <div className="filter__block">
-                            <div className="filter__block__title">Года</div>
+                            <div className="filter__block__title">{t('filter.years')}</div>
                             <div className="filter__block__content filter__block__content_fields">
-                                {this.renderField('year', 'min', '2010', 'от')}
-                                {this.renderField('year', 'max', '2018', 'до')}
+                                {this.renderField('year', 'min', '2010', t('filter.min'))}
+                                {this.renderField('year', 'max', '2018', t('filter.max'))}
                             </div>
                         </div>
                     </div>
                     <div className="filter__block-container">
                         <div className="filter__block">
-                            <div className="filter__block__title">Алгоритм консенсуса</div>
+                            <div className="filter__block__title">{t('filter.consensusAlgorithm')}</div>
                             <div className="filter__block__content">
                                 {this.renderCheckbox('consensusAlgorithm', 'pos', 'PoS')}
                                 {this.renderCheckbox('consensusAlgorithm', 'pow', 'PoW')}
@@ -192,7 +217,7 @@ class Filter extends React.PureComponent {
                     </div>
                 </div>
             </div>
-        )
+        );
     }
 }
 
@@ -209,4 +234,4 @@ class Filter extends React.PureComponent {
 //   isFetching: PropTypes.bool.isRequired
 // };
 
-export default translate('authorization')(Filter);
+export default translate('home')(Filter);
